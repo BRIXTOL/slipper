@@ -1,4 +1,4 @@
-### Slipper
+### Slipper 👟
 
 A document generator from [Brixtol Textiles](https://brixtoltextiles.com). Slipper generates document sheets that can be printed by integrating paramaters from the `URL` into views. For internal use only.
 
