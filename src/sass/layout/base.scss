@@ -1,0 +1,36 @@
+@import "~bootstrap/scss/bootstrap-grid.scss";
+@import "~bootstrap/scss/utilities/spacing.scss";
+
+.container {
+   max-width: 940px;
+   border: 1px solid #222;
+}
+
+.print__button {
+   background-color: #28a745;
+   color: #ffffff;
+   font-size: 18px;
+   padding: 10px 20px;
+   font-weight: 600;
+   letter-spacing: .5px;
+}
+
+body {
+   margin: 0;
+   font-family: 'Open Sans';
+}
+
+a {
+   text-decoration: none;
+}
+
+img {
+   width: 100%;
+   height: auto;
+}
+
+@media print {
+   .print {
+      display: none !important;
+   }
+}

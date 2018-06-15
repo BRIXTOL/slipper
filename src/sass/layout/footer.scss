@@ -1,0 +1,13 @@
+$footer-logo-width:              150px;
+$footer-logo-height:             90px;
+
+.footer {
+   text-align: center;
+   font-size: 14px;
+   &__logo {
+      .icon {
+         width: $footer-logo-width;
+         height: $footer-logo-height;
+      }
+   }
+}
