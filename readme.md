@@ -20,3 +20,10 @@ Slipper handles document sheets for the following
 |--|--|
 | `/rewaxing?foo=bar` |  Creates Rewaxing slip  |
 | `/korallen?foo=bar` |  Creates Return Slip & Order Receipt |
+
+### Github Pages Branch
+Push `dist` directory to the `gh-pages` branch when updates are made.
+
+```
+git subtree push --prefix dist origin gh-pages
+```
