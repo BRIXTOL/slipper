@@ -6,6 +6,8 @@ import uglify from 'rollup-plugin-uglify';
 import buble from 'rollup-plugin-buble';
 import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
+import includePaths from 'rollup-plugin-includepaths';
+import fileSize from 'rollup-plugin-filesize';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -42,9 +44,14 @@ export default {
     }),
     resolve(), // tells Rollup how to find date-fns in node_modules
     commonjs(), // converts date-fns to ES modules
+    includePaths({
+      paths: ["./src/views"],
+      extensions: ['.js']
+    }),
     buble(),
     production && uglify(), // minify, but only in production
-    !production && serve('dist'),      // index.html should be in root of project
-    !production && livereload()
+    !production && serve('dist'), // index.html should be in root of project
+    !production && livereload(),
+    fileSize()
   ]
 };

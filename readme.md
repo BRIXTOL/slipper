@@ -1,6 +1,8 @@
 ### Slipper 👟
 
-A document generator from [Brixtol Textiles](https://brixtoltextiles.com). Slipper generates document sheets that can be printed by integrating paramaters from the `URL` into views. For internal use only.
+A document generator from [Brixtol Textiles](https://brixtoltextiles.com). Slipper generates document sheets that can be printed by integrating paramaters from the `URL` into views.
+
+> Slipper is for internal use only.
 
 ### Installation
 All dependencies are included with the `package.json` file. There are 3 CLI commands.

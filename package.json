@@ -8,6 +8,8 @@
     "rollup": "^0.55.5",
     "rollup-plugin-buble": "^0.19.2",
     "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-filesize": "^2.0.0",
+    "rollup-plugin-includepaths": "^0.2.2",
     "rollup-plugin-livereload": "^0.6.0",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-postcss": "^1.4.0",
@@ -18,7 +20,8 @@
     "bootstrap": "^4.0.0",
     "loadjs": "^3.5.3",
     "mithril": "^1.1.6",
-    "qrious": "^4.0.2"
+    "qrious": "^4.0.2",
+    "siema": "^1.5.1"
   },
   "scripts": {
     "build": "rollup -c",

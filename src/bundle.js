@@ -4,25 +4,33 @@ import './sass/styles.js';
 /* Modules */
 import m from 'mithril';
 
+/* Components */
+import Print from './views/components/print';
+
 /* Layout */
-import Header from './views/layout/header';
-import Print from './views/layout/print';
+import Footer from './layout/footer';
+
+/* Slips */
+import Rewaxing from './views/slips/rewaxing';
+
 /* Views */
-import Rewaxing from './views/rewaxing';
+import Index from './views/index';
 
 const root = document.getElementById('app');
 
 //m.route.prefix('');
-
-m.route(root, '/rewaxing', {
+m.route(root, '/', {
+  '/': {
+    render() {
+      return m(Index);
+    }
+  },
   '/rewaxing': {
     render() {
       return [
         m(Print),
-        m('.container.p-5', [
-          m(Header),
-          m(Rewaxing)
-        ])
+        m(Rewaxing),
+        m(Footer)
       ];
     }
   }
