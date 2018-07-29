@@ -26,6 +26,7 @@
   "scripts": {
     "build": "rollup -c",
     "watch": "rollup -c -w",
-    "icons": "gulp icons"
+    "icons": "gulp icons",
+    "upload": "git subtree push --prefix dist origin gh-pages"
   }
 }
