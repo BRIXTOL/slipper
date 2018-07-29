@@ -5,8 +5,19 @@
 
    &__logo {
       fill: #ffffff;
-      width: 500px;
+      width: 450px;
       height: 73px;
+   }
+
+   &__caption {
+      font-size: 23px;
+      color: #fff;
+    }
+
+    .icon {
+      fill: #ffffff;
+      width: 70px;
+      height: 70px;
    }
 }
 
