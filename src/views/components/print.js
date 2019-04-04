@@ -11,8 +11,8 @@ export default {
             m('button.print__button[type="button"]', {
               onclick: () =>  window.print()
             },[
-              m("svg.icon", m('use[xlink:href="icons.svg#print"]')),
-              m('.span', 'PRINT REWAXING SLIP')
+              m('svg.icon', m('use[xlink:href="icons.svg#print"]')),
+              m('.span', 'PRINT SLIP')
             ]),
           ])
         ])
