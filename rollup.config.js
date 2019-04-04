@@ -2,7 +2,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import serve from 'rollup-plugin-serve';
 import livereload from 'rollup-plugin-livereload';
 import commonjs from 'rollup-plugin-commonjs';
-import uglify from 'rollup-plugin-uglify';
+import { uglify } from 'rollup-plugin-uglify';
 import buble from 'rollup-plugin-buble';
 import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
@@ -45,13 +45,18 @@ export default {
     resolve(), // tells Rollup how to find date-fns in node_modules
     commonjs(), // converts date-fns to ES modules
     includePaths({
-      paths: ["./src/views"],
+      paths: ['./src/views'],
       extensions: ['.js']
     }),
     buble(),
     production && uglify(), // minify, but only in production
     !production && serve('dist'), // index.html should be in root of project
-    !production && livereload(),
+    !production && livereload({
+      watch: 'dist',
+      verbose: false, // Disable console output
+      // other livereload options
+      https: true
+    }),
     fileSize()
   ]
 };

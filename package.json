@@ -1,27 +1,32 @@
 {
   "name": "brixtol-slipper",
   "devDependencies": {
-    "autoprefixer": "^8.1.0",
+    "autoprefixer": "^9.4.8",
     "gulp": "^4.0.0",
     "gulp-svg-sprite": "^1.4.0",
     "node-sass": "^4.7.2",
-    "rollup": "^0.55.5",
+    "rollup": "^1.2.3",
     "rollup-plugin-buble": "^0.19.2",
-    "rollup-plugin-commonjs": "^8.0.2",
-    "rollup-plugin-filesize": "^2.0.0",
+    "rollup-plugin-commonjs": "^9.2.1",
+    "rollup-plugin-filesize": "^6.0.1",
     "rollup-plugin-includepaths": "^0.2.2",
-    "rollup-plugin-livereload": "^0.6.0",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-postcss": "^1.4.0",
-    "rollup-plugin-serve": "^0.4.2",
-    "rollup-plugin-uglify": "^3.0.0"
+    "rollup-plugin-livereload": "^1.0.0",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-uglify": "^6.0.2"
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
+    "gutenberg-css": "^0.4.7",
     "loadjs": "^3.5.3",
     "mithril": "^1.1.6",
+    "normalize-scss": "^7.0.1",
     "qrious": "^4.0.2",
     "siema": "^1.5.1"
+  },
+  "resolutions": {
+    "nodemon/pstree.remy": "1.1.0"
   },
   "scripts": {
     "build": "rollup -c",

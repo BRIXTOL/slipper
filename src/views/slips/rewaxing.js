@@ -10,8 +10,8 @@ export default {
     new qrious({
       element: document.getElementById('qr-code'),
       value: m.route.param('order_url'),
-      mime: "image/svg+xml",
-      level: "L",
+      mime: 'image/svg+xml',
+      level: 'L',
       size: 130
     })
   },

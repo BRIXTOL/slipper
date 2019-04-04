@@ -5,7 +5,7 @@ const svgSprite = require('gulp-svg-sprite');
  * SVG Icon Sprite
  * @return {[type]} [description]
  */
-gulp.task('icons', function() {
+function icons() {
   return gulp.src('./src/icons/*.svg')
     .pipe(svgSprite({
       mode: {
@@ -21,4 +21,6 @@ gulp.task('icons', function() {
       }
     }))
     .pipe(gulp.dest('.'));
-});
+}
+
+exports.icons = icons

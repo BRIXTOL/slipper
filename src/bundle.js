@@ -12,6 +12,7 @@ import Footer from './layout/footer';
 
 /* Slips */
 import Rewaxing from './views/slips/rewaxing';
+import Returns from './views/slips/returns';
 
 /* Views */
 import Index from './views/index';
@@ -31,6 +32,14 @@ m.route(root, '/', {
         m(Print),
         m(Rewaxing),
         m(Footer)
+      ];
+    }
+  },
+  '/return': {
+    render() {
+      return [
+        m(Print),
+        m(Returns)
       ];
     }
   }

@@ -7,3 +7,4 @@ import './views/index.scss';
 
 /* Slips */
 import './slips/rewaxing.scss';
+import './slips/return.scss';

@@ -1,0 +1,128 @@
+.scissors {
+  width: 40px;
+  height: 40px;;
+}
+
+.return {
+  height: 100%;
+
+  &__header {
+    color: #999999;
+    font-weight: 600;
+    font-size: .8rem;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+  }
+
+  .seperator {
+    border-bottom: 1px solid #141313;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+
+  }
+
+  .cutting {
+    border-bottom: 2px dashed #141313;
+    padding-bottom: 50px;
+    margin-bottom: 15px;
+  }
+
+  .sender {
+
+    &__from {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    &__order-no {
+      letter-spacing: .05rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #999999;
+    }
+
+    &__name {
+      font-weight: 600;
+    }
+
+    &__address {
+      font-size: 15px;
+    }
+
+  }
+
+  .recipient {
+
+    &__to {
+      font-size: 30px;
+      font-weight: 600;
+    }
+
+    &__name {
+      font-size: 25px;
+      font-weight: 600;
+    }
+
+
+    &__address {
+      font-size: 20px;
+    }
+
+    &__logo {
+      width: 200px;
+      height: 120px;
+   }
+
+  }
+
+  &__include-slip {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+
+
+  .garment {
+    &__head {
+      font-size: 15px;
+      font-weight: 600;
+      border: 1px solid #ddd;
+      background-color: #f8f8f8;
+    }
+
+    &__items {
+      font-weight: 600;
+      font-size: 18px;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+
+    &__status {
+      border: 1px solid #ddd;
+      color: #666;
+      border-radius: 3px;
+      padding: 7px 14px;
+      font-size: 14px;
+    }
+  }
+
+  .internal {
+    border: 1px solid #ddd;
+
+    .checkbox {
+      min-width: 20px;
+      height: 20px;
+      border: 2px solid #111;
+      display: inline-block;
+    }
+
+    .label {
+      display: inline-block;
+    }
+
+    img {
+      max-width: 140px;
+    }
+  }
+}
