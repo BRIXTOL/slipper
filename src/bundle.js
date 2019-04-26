@@ -1,6 +1,3 @@
-/* Stylesheet */
-import './sass/styles.js';
-
 /* Modules */
 import m from 'mithril';
 

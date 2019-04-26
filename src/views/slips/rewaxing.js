@@ -13,7 +13,7 @@ export default {
       mime: 'image/svg+xml',
       level: 'L',
       size: 130
-    })
+    });
   },
   view() {
     return [

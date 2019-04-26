@@ -1,10 +1,5 @@
-@import "~bootstrap/scss/mixins.scss";
-@import "~bootstrap/scss/bootstrap-grid.scss";
-@import "~bootstrap/scss/utilities/spacing.scss";
-@import "~bootstrap/scss/utilities/text.scss";
-
 .container {
-    max-width: 1074px;
+    max-width: 1024px;
 }
 
 .print__button {
@@ -47,19 +42,16 @@ img {
     height: auto;
 }
 
+
+
 @media print {
+
     .print {
         display: none !important;
     }
 
     a[href]:after {
         content: none !important;
-    }
-
-    @page {
-        size: landscape;
-        margin-top: 0;
-        margin-bottom: 0;
     }
 
     html,

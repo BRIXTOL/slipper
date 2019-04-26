@@ -11,6 +11,33 @@ const company = {
   country: 'Sweden'
 };
 
+const reasons = {
+  fit: [
+    'Too Big',
+    'Too Small',
+    'Too Short',
+    'Too Long'
+  ],
+  quality: [
+    'Damaged/Defective',
+    'Not warm enough',
+    'Too warm',
+    'Uncomfortable',
+  ],
+  service: [
+    'Arrived too late',
+    'Wrong style arrived',
+    'Wrong size arrived',
+    'Ordered 2 sizes and kept 1'
+  ],
+  other: [
+    'Changed my mind',
+    'Did not like style',
+    'Did not like color',
+    'Did not like fabric'
+  ]
+};
+
 /*const dummy = {
   first_name: 'Johannes',
   last_name: 'Gullbring',
@@ -25,6 +52,7 @@ export default {
   oninit() {
     this.params = window.location.href.split('?')[1];
     this.url = m.parseQueryString(this.params);
+    this.products = this.url.products.split(',');
   },
   oncreate() {
     new qrious({
@@ -32,7 +60,7 @@ export default {
       value: m.route.param('order_url'),
       mime: 'image/svg+xml',
       level: 'L',
-      size: 110
+      size: 90
     });
   },
   view() {
@@ -49,10 +77,16 @@ export default {
                 m('.d-block.pl-4', `${this.url.country}`)
               ])
             ]),
-            m('.col-auto.align-self-center.text-uppercase', [
+            m('.col-auto.align-self-start.text-uppercase', [
+              m('.sender__from.pb-3', 'ORDER NO:'),
               m('.sender__address', [
-                m('.d-block.sender__from', `ORDER NO: #${this.url.order_number}`),
-                m('.d-block.sender__from.pt-2', 'RETURN PACKAGE')
+                m('.d-block.pl-4.sender__from', `#${this.url.order_number}`),
+              ])
+            ]),
+            m('.col-auto.align-self-start.text-uppercase', [
+              m('.sender__from.pb-3', 'TYPE:'),
+              m('.sender__address', [
+                m('.d-block.sender__return.text-center', 'RETURN PACKAGE')
               ])
             ]),
             m('.col-auto', [
@@ -76,7 +110,7 @@ export default {
               m('svg.recipient__logo', m('use[xlink:href="icons.svg#logo"]'))
             ])
           ]),
-          m('.row.justify-content-between.align-items-center.pb-5', [
+          m('.row.justify-content-between.align-items-center.pb-4', [
             m('.col-auto', [
               m('svg.scissors', m('use[xlink:href="icons.svg#scissors"]'))
             ]),
@@ -95,22 +129,90 @@ export default {
           ]),
           m('.row', [
             m('.col-12.text-center', [
-
-              m('.return__include-slip', 'Be	sure	to	include	this	slip	in	your	return	package.'),
-
-              m('.header__address.d-none', [
-                m('.row.justify-content-start.py-5', [
+              m('.return__include-slip', 'Be	sure	to	include	this	slip	in	your	return	package.')
+            ])
+          ]),
+          m('.row.pt-2', [
+            m('.col-12.text-left', [
+              m('h4', 'GARMENT/S TO BE RETURNED')
+            ])
+          ]),
+          m('.row.justify-items-center.internal.pb-3', [
+            this.products.map(item => [
+              m('.col-3.mt-3', [
+                m('.row.py-1', [
                   m('.col-auto', [
-                    m('.d-block.pb-3', `${this.url.first_name} ${this.url.last_name}`),
-                    m('.d-block', `${this.url.street_address}`),
-                    m('.d-block', `${this.url.city}, ${this.url.zip}`),
-                    m('.d-block', `${this.url.country}`)
-                  ])
-                ]),
+                    m('.checkbox'),
+                  ]),
+                  m('.col-8.pl-0', item)
+                ])
+              ])
+            ])
+          ]),
+          m('.row', [
+            m('.col-12.text-left', [
+              m('h4.mb-0', 'REASON FOR RETURN'),
+              m('p', 'Please mark the reason/s for returning your garment.')
+            ])
+          ]),
+          m('.row.justify-items-center.internal.pb-3', [
+            m('.col-3', [
+              m('h4', 'Fit/Size'),
+              reasons.fit.map(item => [
+                m('.row.py-1', [
+                  m('.col-auto', [
+                    m('.checkbox'),
+                  ]),
+                  m('.col-8.pl-0', item)
+                ])
+              ])
+            ]),
+            m('.col-3.pl-0', [
+              m('h4', 'Quality'),
+              reasons.quality.map(item => [
+                m('.row.py-1', [
+                  m('.col-auto', [
+                    m('.checkbox'),
+                  ]),
+                  m('.col-8.pl-0', item)
+                ])
+              ])
+            ]),
+            m('.col-3.pl-0', [
+              m('h4', 'Service'),
+              reasons.service.map(item => [
+                m('.row.py-1', [
+                  m('.col-auto', [
+                    m('.checkbox'),
+                  ]),
+                  m('.col-8.pl-0', item)
+                ])
+              ])
+            ]),
+            m('.col-3', [
+              m('h4', 'Other'),
+              reasons.other.map(item => [
+                m('.row.py-1', [
+                  m('.col-auto', [
+                    m('.checkbox'),
+                  ]),
+                  m('.col-8.pl-0', item)
+                ])
               ])
             ])
           ])
-        ])
+        ]),
+        m('.row.seperator.d-none', [
+          m('.col-7.text-left', [
+            m('h4.mb-0.py-0', 'IMPORTANT'),
+            m('p.pt-0', 'Please review our Returns and Exchange conditions by visiting: brixtol.com/returns to ensure your return is applicable.')
+
+          ]),
+          m('.col-5', [
+            m('h4.mb-0', 'Have any questions?'),
+            m('p.pt-0', 'Contact our customer service by Email: help@brixtoltextiles.com')
+          ])
+        ]),
       ])
     ];
   }

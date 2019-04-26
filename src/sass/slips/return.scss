@@ -1,6 +1,6 @@
 .scissors {
-  width: 40px;
-  height: 40px;;
+  width: 27px;
+  height: 27px;
 }
 
 .return {
@@ -15,15 +15,15 @@
   }
 
   .seperator {
-    border-bottom: 1px solid #141313;
-    padding-bottom: 25px;
-    margin-bottom: 25px;
+    border-bottom: 1px solid #999;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
 
   }
 
   .cutting {
     border-bottom: 2px dashed #141313;
-    padding-bottom: 50px;
+    padding-bottom: 15px;
     margin-bottom: 15px;
   }
 
@@ -49,35 +49,41 @@
       font-size: 15px;
     }
 
+    &__return {
+      font-size: 15px;
+    }
+
   }
 
   .recipient {
 
     &__to {
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 600;
     }
 
     &__name {
-      font-size: 25px;
+      font-size: 21px;
       font-weight: 600;
     }
 
 
     &__address {
-      font-size: 20px;
+      font-size: 18px;
     }
 
     &__logo {
-      width: 200px;
-      height: 120px;
+      width: 140px;
+      height: 100px;
    }
 
   }
 
   &__include-slip {
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #999;
   }
 
 
@@ -108,21 +114,36 @@
   }
 
   .internal {
-    border: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    font-size: 12px;
 
     .checkbox {
       min-width: 20px;
       height: 20px;
+      width: 20px;
       border: 2px solid #111;
-      display: inline-block;
-    }
-
-    .label {
       display: inline-block;
     }
 
     img {
       max-width: 140px;
+    }
+
+    h4 {
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    ul {
+      list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+      li {
+        display: block;
+        margin: 0;
+        padding: 0;
+      }
     }
   }
 }
