@@ -1,7 +1,7 @@
 const { src, dest, watch, series, parallel, lastRun } = require('gulp');
 const { pipeline } = require('stream');
 const { rollup } =  require('rollup');
-// const { uglify } =  require('rollup-plugin-uglify');
+const { uglify } =  require('rollup-plugin-uglify');
 const bs = require('browser-sync').create();
 const svgSprite = require('gulp-svg-sprite');
 const nodeResolve =  require('rollup-plugin-node-resolve');
@@ -86,7 +86,7 @@ async function scripts () {
         commonjs(), // converts date-fns to ES modules
         includePaths(plug.includePaths),
         buble(),
-        //production && uglify(), // minify, but only in production
+        uglify() // minify, but only in production
       ]
     });
 

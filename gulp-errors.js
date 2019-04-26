@@ -5,7 +5,6 @@ const PluginError = require('plugin-error');
 
 module.exports = error => {
 
-  console.log(error);
 
   // Skip error CLI out if argument is undefined
   if (typeof error === 'undefined') return;
