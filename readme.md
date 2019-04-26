@@ -9,9 +9,9 @@ All dependencies are included with the `package.json` file. There are 3 CLI comm
 
 |Command| Operation |
 |--|--|
-| `yarn watch` |  Runs development from `dist`   |
-| `yarn build` |  Builds into `dist` for production |
-| `yarn icons` |  Creates SVG Sprite from `/src/icons` |
+| `gulp watch` |  Runs development from `dist`   |
+| `gulp build` |  Builds into `dist` for production |
+| `gulp icons` |  Creates SVG Sprite from `/src/icons` |
 | `yarn upload` |  Pushes the `dist` directory to the gh-pages branch. |
 
 ### Documents
