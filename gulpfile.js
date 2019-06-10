@@ -25,6 +25,12 @@ function serve (done) {
 
 }
 
+function reload () {
+
+  return bs.reload();
+
+}
+
 /* -------------------------------------------- */
 /*                  STYLESHEETS                 */
 /* -------------------------------------------- */
@@ -94,7 +100,7 @@ async function scripts () {
       file: task.dest,
       format: 'iife',
       sourcemap: true
-    });
+    }).then(bs.reload);
 
   } catch (error) {
 
@@ -123,6 +129,6 @@ function watchers () {
 /* -------------------------------------------- */
 
 exports.build = series(styles, scripts, icons);
-exports.default = parallel(watchers, serve);
+exports.default = series(parallel(watchers, serve), reload);
 
 
