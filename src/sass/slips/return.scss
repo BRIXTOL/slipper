@@ -1,6 +1,20 @@
+.scissors-down,
 .scissors {
   width: 27px;
   height: 27px;
+}
+
+.bd-bottom {
+  border-bottom: 1px solid #999999;
+}
+
+.promo-disclaim {
+  font-size: 11px;
+  font-style: italic;
+}
+
+.exchange-block {
+  border: 1px solid #999;
 }
 
 .return {
@@ -19,6 +33,12 @@
     padding-bottom: 15px;
     margin-bottom: 15px;
 
+  }
+
+  .cutting-vertical {
+    border-right: 2px dashed #141313;
+    padding-right: 35px;
+    padding-left: 15px;
   }
 
   .cutting {
@@ -50,7 +70,12 @@
     }
 
     &__return {
+      color: #999999;
       font-size: 15px;
+      font-weight: 600;
+      border: 1px solid #999999;
+      border-radius: 5px;
+      padding: 10px;
     }
 
   }
@@ -73,8 +98,8 @@
     }
 
     &__logo {
-      width: 140px;
-      height: 100px;
+      width: 100px;
+      height: 60px;
    }
 
   }
@@ -114,13 +139,23 @@
   }
 
   .internal {
-    border-top: 1px solid #ddd;
+    //border-top: 1px solid #ddd;
     font-size: 12px;
 
+    &__item {
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    &__seperator {
+      border-bottom: 1px solid #e4dfdf;
+    }
+
     .checkbox {
-      min-width: 20px;
-      height: 20px;
-      width: 20px;
+      min-width: 15px;
+      height: 15px;
+      width: 15px;
       border: 2px solid #111;
       display: inline-block;
     }

@@ -67,34 +67,8 @@ export default {
     return [
       m('.container', [
         m('.return', [
-          m('.row.justify-content-between.align-items-center.seperator', [
-            m('.col-auto.align-self-right.text-uppercase', [
-              m('.sender__from.pb-3', 'FROM:'),
-              m('.sender__address', [
-                m('.d-block.sender__name.pl-4.pb-2', `${this.url.first_name} ${this.url.last_name}`),
-                m('.d-block.pl-4', `${this.url.street_address}`),
-                m('.d-block.pl-4', `${this.url.city}, ${this.url.zip}`),
-                m('.d-block.pl-4', `${this.url.country}`)
-              ])
-            ]),
-            m('.col-auto.align-self-start.text-uppercase', [
-              m('.sender__from.pb-3', 'ORDER NO:'),
-              m('.sender__address', [
-                m('.d-block.pl-4.sender__from', `#${this.url.order_number}`),
-              ])
-            ]),
-            m('.col-auto.align-self-start.text-uppercase', [
-              m('.sender__from.pb-3', 'TYPE:'),
-              m('.sender__address', [
-                m('.d-block.sender__return.text-center', 'RETURN PACKAGE')
-              ])
-            ]),
-            m('.col-auto', [
-              m('canvas#qr-code')
-            ])
-          ]),
-          m('.row.justify-content-between.align-items-center.cutting', [
-            m('.col-auto', [
+          m('.row.cutting', [
+            m('.col-auto.pb-3.pr-5', [
               m('.sender__from.pb-3', 'SHIP TO:'),
               m('.recipient__to', [
                 m('.b-block.pl-4.recipient__name', `${company.name}`),
@@ -106,8 +80,26 @@ export default {
                 m('.d-block', `${company.country}`)
               ])
             ]),
-            m('.col-auto', [
-              m('svg.recipient__logo', m('use[xlink:href="icons.svg#logo"]'))
+            m('.col-auto.pl-5.pb-3.align-self-top.cutting-vertical', [
+              m('.sender__from.pb-3', 'TYPE:'),
+              m('.sender__address.pt-4', [
+                m('.d-block.sender__return.text-center', 'RETURN PACKAGE')
+              ])
+            ]),
+            m('.col-auto.align-self-center', [
+              m('.d-block.pb-4', [
+                m('svg.scissors-down', m('use[xlink:href="icons.svg#scissors-vertical"]'))
+              ]),
+              m('.d-block.pt-4', [
+                m('svg.scissors-down', m('use[xlink:href="icons.svg#scissors-vertical"]'))
+              ])
+            ]),
+            m('.col.align-self-center', [
+              m('.row', [
+                m('.col-12.text-center', [
+                  m('.return__include-slip', 'Cut out the shipping label and tape the slip to your return package.')
+                ])
+              ]),
             ])
           ]),
           m('.row.justify-content-between.align-items-center.pb-4', [
@@ -118,7 +110,7 @@ export default {
               m('svg.scissors', m('use[xlink:href="icons.svg#scissors"]'))
             ]),
             m('col-auto', [
-              m('.text-center', 'Cut here and tape the slip above to your return package.')
+              m('.text-center', 'Be	sure	to	include	this	slip	in	your	return	package.')
             ]),
             m('.col-auto', [
               m('svg.scissors', m('use[xlink:href="icons.svg#scissors"]'))
@@ -127,32 +119,76 @@ export default {
               m('svg.scissors', m('use[xlink:href="icons.svg#scissors"]'))
             ]),
           ]),
-          m('.row', [
-            m('.col-12.text-center', [
-              m('.return__include-slip', 'Be	sure	to	include	this	slip	in	your	return	package.')
+          m('.row.no-gutters.justify-content-between.align-items-center.pb-3.bd-bottom', [
+            m('.col-auto.align-self-right.text-uppercase', [
+              m('.sender__address', [
+                m('.d-block.sender__name.pb-3', `${this.url.first_name} ${this.url.last_name}`),
+                m('.d-block', `${this.url.street_address}`),
+                m('.d-block', `${this.url.city}, ${this.url.zip}`),
+                m('.d-block', `${this.url.country}`)
+              ])
+            ]),
+            m('.col-auto', [
+              m('.row.no-gutters.pb-3',[
+                m('.col-auto.sender__from.pr-2', 'ORDER NO:'),
+                m('.col-auto.sender__from', `#${this.url.order_number}`)
+              ]),
+            ]),
+            m('.col-auto', [
+              m('svg.recipient__logo', m('use[xlink:href="icons.svg#logo"]'))
             ])
           ]),
-          m('.row.pt-2', [
-            m('.col-12.text-left', [
-              m('h4', 'GARMENT/S TO BE RETURNED')
+          m('.row.justify-items-between.align-items-center.no-gutters.py-3.bd-bottom', [
+            m('.col-3', [
+              m('.d-block.internal__item', 'PRODUCT')
+            ]),
+            m('.col-5', [
+              m('.d-block.internal__item', 'REQUEST'),
+            ]),
+            m('.col', [
+              m('.d-inline.internal__item', 'EXCHANGE INFORMATION')
             ])
           ]),
-          m('.row.justify-items-center.internal.pb-3', [
-            this.products.map(item => [
-              m('.col-3.mt-3', [
-                m('.row.py-1', [
-                  m('.col-auto', [
-                    m('.checkbox'),
+          m('.row.no-gutters.justify-items-between.internal.pb-1.bd-bottom', [
+            this.products.map((item, id) => [
+              m('.col-12.mt-1', {
+                class: this.products.length -1 !== id && 'internal__seperator'
+              }, [
+                m('.row.justify-items-between.align-items-center.no-gutters.py-2', [
+                  m('.col-3', [
+                    m('.d-block.internal__item', item)
                   ]),
-                  m('.col-8.pl-0', item)
-                ])
+                  m('.col-5', [
+                    m('.row.py-1.no-gutters', [
+                      m('.col-auto', [
+                        m('.checkbox')
+                      ]),
+                      m('.col-auto.pl-2.pr-3', 'Refund'),
+                      m('.col-auto', [
+                        m('.checkbox')
+                      ]),
+                      m('.col-auto.pl-2.pr-3', 'Credit'),
+                      m('.col-auto', [
+                        m('.checkbox')
+                      ]),
+                      m('.col-auto.pl-2.pr-3', 'Exchange'),
+                    ]),
+                  ]),
+                  m('.col', [
+                    m('.row.no-gutters', [
+                      m('.col-4', 'SIZE:'),
+                      m('.col', 'COLOR:'),
+                    ]),
+                  ])
+                ]),
               ])
             ])
           ]),
+          m('.d-block.text-center.py-2.promo-disclaim', 'Credit requests will be issued using a discount code which will be sent to the email address used at checkout. Please include any free and/or promotional items you may have received with your purchase when requesting refunds and/or credit.'),
           m('.row', [
             m('.col-12.text-left', [
               m('h4.mb-0', 'REASON FOR RETURN'),
-              m('p', 'Please mark the reason/s for returning your garment.')
+              m('p.pt-0', 'Please mark the reason/s for returning your garment.')
             ])
           ]),
           m('.row.justify-items-center.internal.pb-3', [
