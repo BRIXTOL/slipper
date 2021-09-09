@@ -13,28 +13,29 @@ const company = {
 
 const reasons = {
   fit: [
-    'Too Big',
-    'Too Small',
-    'Too Short',
-    'Too Long'
+    ['01', 'Too Big'],
+    ['02', 'Too Small'],
+    ['03', 'Too Short'],
+    ['04', 'Too Long']
   ],
   quality: [
-    'Damaged/Defective',
-    'Not warm enough',
-    'Too warm',
-    'Uncomfortable',
+    ['05', 'Damaged/Defective'],
+    ['06', 'Not warm enough'],
+    ['07', 'Too warm'],
+    ['08', 'Uncomfortable'],
   ],
   service: [
-    'Arrived too late',
-    'Wrong style arrived',
-    'Wrong size arrived',
-    'Ordered 2 sizes and kept 1'
+    ['09','Arrived too late'],
+    ['10', 'Wrong style arrived'],
+    ['11', 'Wrong size arrived'],
+    ['12', 'Wrong color arrived'],
+    ['13', 'Ordered 2 sizes and kept 1']
   ],
   other: [
-    'Changed my mind',
-    'Did not like style',
-    'Did not like color',
-    'Did not like fabric'
+    ['14', 'Changed my mind'],
+    ['15', 'Did not like style'],
+    ['16', 'Did not like color'],
+    ['17', 'Did not like fabric']
   ]
 };
 
@@ -142,12 +143,12 @@ export default {
             m('.col-3', [
               m('.d-block.internal__item', 'PRODUCT')
             ]),
-            m('.col-5', [
+            m('.col-4', [
               m('.d-block.internal__item', 'REQUEST'),
             ]),
             m('.col', [
               m('.d-inline.internal__item', 'EXCHANGE INFORMATION')
-            ])
+            ]),
           ]),
           m('.row.no-gutters.justify-items-between.internal.pb-1.bd-bottom', [
             this.products.map((item, id) => [
@@ -158,7 +159,7 @@ export default {
                   m('.col-3', [
                     m('.d-block.internal__item', item)
                   ]),
-                  m('.col-5', [
+                  m('.col-4', [
                     m('.row.py-1.no-gutters', [
                       m('.col-auto', [
                         m('.checkbox')
@@ -167,17 +168,18 @@ export default {
                       m('.col-auto', [
                         m('.checkbox')
                       ]),
-                      m('.col-auto.pl-2.pr-3', 'Credit'),
+                      m('.col-auto.pl-2.pr-3', 'Exchange'),
                       m('.col-auto', [
                         m('.checkbox')
                       ]),
-                      m('.col-auto.pl-2.pr-3', 'Exchange'),
+                      m('.col-auto.pl-2.pr-3', 'Credit'),
                     ]),
                   ]),
                   m('.col', [
                     m('.row.no-gutters', [
-                      m('.col-4', 'SIZE:'),
-                      m('.col', 'COLOR:'),
+                      m('.col', 'SIZE:'),
+                      m('.col-4', 'COLOR:'),
+                      m('.col', 'REASON NO:'),
                     ]),
                   ])
                 ]),
@@ -188,7 +190,7 @@ export default {
           m('.row', [
             m('.col-12.text-left', [
               m('h4.mb-0', 'REASON FOR RETURN'),
-              m('p.pt-0', 'Please mark the reason/s for returning your garment.')
+              m('p.pt-0', 'Please reference the return reason number above.')
             ])
           ]),
           m('.row.justify-items-center.internal.pb-3', [
@@ -197,9 +199,9 @@ export default {
               reasons.fit.map(item => [
                 m('.row.py-1', [
                   m('.col-auto', [
-                    m('.checkbox'),
+                    m('h3.m-0', item[0]),
                   ]),
-                  m('.col-8.pl-0', item)
+                  m('.col-8.pl-0', item[1])
                 ])
               ])
             ]),
@@ -208,9 +210,9 @@ export default {
               reasons.quality.map(item => [
                 m('.row.py-1', [
                   m('.col-auto', [
-                    m('.checkbox'),
+                    m('h3.m-0', item[0]),
                   ]),
-                  m('.col-8.pl-0', item)
+                  m('.col-8.pl-0', item[1])
                 ])
               ])
             ]),
@@ -219,9 +221,9 @@ export default {
               reasons.service.map(item => [
                 m('.row.py-1', [
                   m('.col-auto', [
-                    m('.checkbox'),
+                    m('h3.m-0', item[0]),
                   ]),
-                  m('.col-8.pl-0', item)
+                  m('.col-8.pl-0', item[1])
                 ])
               ])
             ]),
@@ -230,9 +232,9 @@ export default {
               reasons.other.map(item => [
                 m('.row.py-1', [
                   m('.col-auto', [
-                    m('.checkbox'),
+                    m('h3.m-0', item[0]),
                   ]),
-                  m('.col-8.pl-0', item)
+                  m('.col-8.pl-0', item[1])
                 ])
               ])
             ])
