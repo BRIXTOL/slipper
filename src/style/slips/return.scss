@@ -1,0 +1,195 @@
+.return-logo {
+  width: 120px;
+  height: 80px;
+}
+
+.scissors-down,
+.scissors {
+  width: 27px;
+  height: 27px;
+}
+
+.bd-bottom {
+  border-bottom: 1px solid #999999;
+}
+
+.promo-sm {
+  font-size: 10px;
+  display: block;
+}
+
+.promo-disclaim {
+  font-size: 10px;
+  font-style: italic;
+  display: block;
+}
+
+.exchange-block {
+  border: 1px solid #999;
+}
+.d-block {
+  display: block !important;
+}
+
+.return {
+  height: 100%;
+
+  &__header {
+    color: #999999;
+    font-weight: 600;
+    font-size: 0.8rem;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+  }
+
+  .seperator {
+    border-bottom: 1px solid #999;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+
+  .cutting-vertical {
+    border-right: 2px dashed #141313;
+    padding-right: 35px;
+    padding-left: 15px;
+  }
+
+  .cutting {
+    border-bottom: 2px dashed #141313;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+
+  .sender {
+    &__from {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    &__order-no {
+      letter-spacing: 0.05rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #999999;
+    }
+
+    &__name {
+      font-weight: 600;
+    }
+
+    &__address {
+      font-size: 12px;
+    }
+
+    &__return {
+      color: #999999;
+      font-size: 15px;
+      font-weight: 600;
+      border: 1px solid #999999;
+      border-radius: 5px;
+      padding: 10px;
+    }
+  }
+
+  .recipient {
+    &__to {
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    &__name {
+      font-size: 21px;
+      font-weight: 600;
+    }
+
+    &__address {
+      font-size: 18px;
+    }
+
+    &__logo {
+      width: 100px;
+      height: 60px;
+    }
+  }
+
+  &__include-slip {
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #999;
+  }
+
+  .garment {
+    &__head {
+      font-size: 15px;
+      font-weight: 600;
+      border: 1px solid #ddd;
+      background-color: #f8f8f8;
+    }
+
+    &__items {
+      font-weight: 600;
+      font-size: 18px;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+    }
+
+    &__status {
+      border: 1px solid #ddd;
+      color: #666;
+      border-radius: 3px;
+      padding: 7px 14px;
+      font-size: 14px;
+    }
+  }
+
+  .internal {
+    //border-top: 1px solid #ddd;
+    font-size: 12px;
+
+    &__size {
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+
+    &__item {
+      font-weight: 600;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    &__seperator {
+      border-bottom: 1px solid #e4dfdf;
+    }
+
+    .checkbox {
+      min-width: 15px;
+      height: 15px;
+      width: 15px;
+      border: 1px solid #111;
+      display: inline-block;
+    }
+
+    img {
+      max-width: 140px;
+    }
+
+    h4 {
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: block;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
