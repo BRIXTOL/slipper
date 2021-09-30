@@ -23,10 +23,3 @@ Slipper handles document sheets for the following
 | ------------------- | ----------------------------------- |
 | `/returns?key=value` | Creates Rewaxing slip               |
 
-### Github Pages Branch
-
-Push `dist` directory to the `gh-pages` branch when updates are made.
-
-```
-git subtree push --prefix dist origin gh-pages
-```
