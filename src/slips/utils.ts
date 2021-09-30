@@ -74,8 +74,6 @@ export function getLineItems<T extends {
   const line_items: IParams['line_items'] = [];
   const products = JSON.parse(items) as IParams['line_items'];
 
-  products[0].qty = 2;
-
   for (const item of products) {
     if (size_cols !== 'col-2' && item.product.length > 37) size_cols = m.class('col-2');
     if (item.qty > 1) while (item.qty--) line_items.push(item);
