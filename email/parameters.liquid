@@ -1,0 +1,27 @@
+{%- capture order_items -%}
+[
+  {%- for line in line_items -%}{
+      "product": "{{ line.title }}",
+      "size": "{{ line.variant.title }}",
+      "qty": {{ line.quantity }},
+      "sku": "{{ line.sku }}"
+    }
+  {%- unless forloop.last -%},{%- endunless -%}
+  {%- endfor -%}
+]
+{%- endcapture -%}
+
+
+{%- capture return_slip -%}
+  order_number={{ order_name | remove: '#' }}
+  &order_url=https://{{ shop.permanent_domain }}/admin/orders/{{ id }}
+  &first_name={{ customer.first_name }}
+  &last_name={{ customer.last_name }}
+  &street_address={{ shipping_address.street }}
+  &city={{ shipping_address.city }}
+  &zip={{ shipping_address.zip }}
+  &country={{ shipping_address.country }}
+  &country_code={{ shipping_address.country_code }}
+  &return_option={{ attributes.returns | default: 'unknown' }}
+  &line_items={{ order_items | strip | url_param_escape }}
+{% endcapture %}
