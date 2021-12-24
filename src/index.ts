@@ -1,9 +1,10 @@
 import './style/styles.scss';
 import m from 'mithril';
-import { Returns } from './slips/returns';
-import { Index } from './index/index';
+import { Rewax } from './views/rewax';
+import { Returns } from './views/returns';
+import { Index } from './views/index/index';
 
-// m.route.prefix('');
+m.route.prefix = '';
 m.route(document.body, '/', {
   '/': {
     render () {
@@ -11,6 +12,13 @@ m.route(document.body, '/', {
     }
   },
   '/return': {
-    render: () => m(Returns)
+    render () {
+      return m(Returns);
+    }
+  },
+  '/rewaxing': {
+    render () {
+      return m(Rewax);
+    }
   }
 });
