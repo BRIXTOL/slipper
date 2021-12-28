@@ -4,6 +4,7 @@ build/js/
 npm-debug.log*
 __snapshots__
 yarn.lock
+.rollup.cache
 
 # Local Netlify folder
 .netlify
