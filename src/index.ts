@@ -5,6 +5,7 @@ import { Returns } from './views/returns';
 import { Index } from './views/index/index';
 
 m.route.prefix = '';
+
 m.route(document.body, '/', {
   '/': {
     render () {

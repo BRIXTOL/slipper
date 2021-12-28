@@ -1,6 +1,6 @@
 {
   "name": "@brixtol/slipper",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "private": true,
   "description": "Brixtol Textiles slip generator application used to create printable documents",
   "author": {
@@ -14,10 +14,12 @@
   },
   "scripts": {
     "serve": "netlify dev --port 65111",
-    "dev": "rollup -c -w",
+    "serve:live": "netlify dev --port 65111 --live",
+    "dev": "concurrently \"rollup -c -w\" \"pnpm run serve\"",
     "prod": "rollup -c -w --environment prod",
     "build": "rollup -c --environment prod",
-    "strip": "node scripts/strip.js"
+    "strip": "node scripts/strip.js",
+    "upload": "netlify deploy --prod"
   },
   "license": "see LICENSE.txt",
   "prettier": "@brixtol/prettier-config",
@@ -31,20 +33,26 @@
   "dependencies": {
     "@brixtol/bootstrap": "workspace:^1.0.0",
     "@brixtol/country-names": "workspace:^1.1.2",
-    "bootstrap": "^5.1.1",
+    "lazy-line-painter": "^1.9.6",
     "mithril": "^2.0.4",
-    "qrious": "^4.0.2"
+    "qrcanvas": "^3.1.2",
+    "qrcode-svg": "^1.1.0"
   },
   "devDependencies": {
-    "@brixtol/eslint-config": "workspace:^1.0.1",
-    "@brixtol/mcss": "workspace:^1.2.0-alpha.2",
-    "@brixtol/prettier-config": "workspace:^1.1.0",
-    "@brixtol/rollup-config": "workspace:^1.2.0",
+    "@brixtol/eslint-config": "workspace:^1.1.0",
+    "@brixtol/prettier-config": "workspace:^1.2.0",
+    "@brixtol/rollup-config": "workspace:^1.4.0",
     "@brixtol/tsconfig": "workspace:^1.0.1",
+    "@brixtol/types": "workspace:^0.1.0",
     "@fullhuman/postcss-purgecss": "^4.0.3",
     "@types/mithril": "^2.0.8",
     "autoprefixer": "^10.3.6",
+    "chalk": "^4.1.2",
+    "concurrently": "^6.4.0",
     "netlify-cli": "^6.8.4",
-    "sass": "^1.41.1"
+    "sass": "^1.41.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-scss": "^3.21.0"
   }
 }

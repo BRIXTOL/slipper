@@ -1,12 +1,39 @@
 {
   "prettier.configPath": "node_modules/@brixtol/prettier-config/index.js",
+  "stylelint.packageManager": "pnpm",
+  "stylelint.enable": true,
+  "scss.validate": false,
+  "scss.scannerExclude": ["**/.git", "**/node_modules"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
+  "mjml.lintEnable": true,
+  "mjml.autoPreview": false,
+  "mjml.autoClosePreview": false,
+  "mjml.preserveFocus": false,
+  "mjml.switchOnSeparateFileChange": true,
+  "[mjml]": {
+    "editor.defaultFormatter": "mjmlio.vscode-mjml"
+  },
+  "mjml.beautify": {
+    "indent_size": 2,
+    "wrap_attributes_indent_size": 2
+  },
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    // "**/node_modules": true,
+    "**/node_modules": false,
     "**/.netlify": true
-  }
+  },
+  "vsicons.associations.files": [
+    {
+      "icon": "mjml",
+      "extensions": ["mjml"],
+      "filename": true,
+      "format": "svg"
+    }
+  ]
 }

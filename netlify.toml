@@ -1,9 +1,19 @@
 [build]
-  functions = "app/functions"
-  publish   = "public"
+  publish = "public"
 
   [build.environment]
     NPM_FLAGS = "--prefix=/dev/null"
+
+[[redirects]]
+  from   = "/*"
+  status = 200
+  to     = "/index.html"
+
+
+[[redirects]]
+  from   = "https://slipper.brixtol.com/*"
+  status = 200
+  to     = "/index.html"
 
 
 # REQUEST HEADERS

@@ -1,10 +1,7 @@
-import { rollup, plugin, env } from '@brixtol/rollup-config';
-import typescript from 'typescript';
+import { rollup, plugin, env, config } from '@brixtol/rollup-config';
 import autoprefixer from 'autoprefixer';
-import mcss from '@brixtol/mcss';
 import sass from 'sass';
 import purge from '@fullhuman/postcss-purgecss';
-import * as tslib from 'tslib';
 
 export default rollup(
   {
@@ -12,47 +9,37 @@ export default rollup(
     output: {
       file: 'public/slipper.min.js',
       format: 'es',
-      sourcemap: false
+      sourcemap: env.is('dev', 'inline')
     },
     plugins: env.if('dev')(
       [
-        plugin.del(
+        plugin.replace(
           {
-            targets: [
-              'public/style.min.css',
-              'public/slipper.min.js',
-              'public/tsconfig.tsbuildinfo'
-            ]
-          }
-        ),
-        mcss(
-          {
-            minify: env.prod,
-            obfuscate: env.prod,
-            declaration: 'src/style/styles.d.ts'
+            preventAssignment: true,
+            delimiters: [ '<!', '!>' ],
+            values: {
+              version: config.package.version
+            }
           }
         ),
         plugin.postcss(
           {
             use: { sass },
             autoModules: false,
+            minimize: env.prod,
             extract: 'style.min.css',
-            plugins: env.prod ? [
+            plugins: env.is('prod', [
               autoprefixer(),
               purge(
                 {
                   variables: true,
                   content: [
                     'src/index.ts',
-                    'src/index/*.ts',
-                    'src/slips/**/*.ts'
+                    'src/views/**/*.ts'
                   ]
                 }
-              ),
-              mcss.postcss()
-            ] : [
-              mcss.postcss()
-            ]
+              )
+            ])
           }
         ),
         plugin.resolve(
@@ -62,14 +49,7 @@ export default rollup(
           }
         ),
         plugin.commonjs(),
-        plugin.ts(
-          {
-            typescript,
-            tslib,
-            cacheDir: 'node_modules/.cache/.rollup.tscache',
-            outputToFilesystem: false
-          }
-        ),
+        plugin.esbuild(),
         plugin.html(
           {
             title: 'BRIXTOL | Slipper',
@@ -100,17 +80,11 @@ export default rollup(
           {
             preventAssignment: true,
             values: {
-              'http://localhost:8888': 'https://slipper.brixtol.com'
+              'http://localhost:65111': 'https://slipper.brixtol.com'
             }
           }
         ),
-        plugin.terser(
-          {
-            compress: {
-              passes: 2
-            }
-          }
-        )
+        plugin.esminify()
       ]
     )
   }
