@@ -1,0 +1,16 @@
+<mj-section full-width="full-width" background-color="#f9f9f9" padding="0">
+  <mj-column width="100%" vertical-align="middle">
+    <mj-text align="center" font-size="9.5px" color="#7e7e7e" line-height="15px">
+      <p>
+        Automated email sent from <a href="https://www.brixtoltextiles.com" style="color:#444;">BRIXTOL TEXTILES</a> of <a href="https://www.sunday-seven.com" target="_blank" style="color:#444;">Söndag Den Sjunde</a> AB Fashion Agency.
+        <br> VAT no: <strong>SE556840368601</strong> | Trademark no: <strong>30870</strong> | Stockholm, Sweden. All rights reserved.
+      </p>
+    </mj-text>
+    <mj-divider border-color="#eee" border-style="solid" border-width="1px" padding="10px"></mj-divider>
+    <mj-text align="center" font-size="9.5px" color="#7e7e7e" line-height="15px">
+      <p>
+        This email has been delivered to all those who have been approved and subscribed to order notifications.<br> Refer all contact and questions to <a href="https://www.brixtol.com/support" target="_blank" style="color:#444;">brixtol.com/support</a> or reach admin via <a href="mailto:help@brixtol.com" target="_blank" style="color:#444;">info@brixtol.com</a>
+      </p>
+    </mj-text>
+  </mj-column>
+</mj-section>

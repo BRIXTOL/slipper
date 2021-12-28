@@ -1,0 +1,589 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+
+      <mj-text padding="0px"></mj-text>
+      <mj-class name="blue" color="blue"></mj-class>
+
+      <mj-raw>
+        <!-- FONT COLORS -->
+      </mj-raw>
+      <mj-class name="white" color="#ffffff"></mj-class>
+      <mj-class name="black" color="#111111"></mj-class>
+      <mj-class name="green" color="#28a745"></mj-class>
+      <mj-class name="gray-100" color="#ecedee"></mj-class>
+      <mj-class name="gray-200" color="#666666"></mj-class>
+      <mj-class name="gray-300" color="#777777"></mj-class>
+      <mj-class name="gray-400" color="#999999"></mj-class>
+      <mj-class name="gray-500" color="#222222"></mj-class>
+
+      <mj-raw>
+        <!-- FONT FACE -->
+      </mj-raw>
+      <mj-class name="ff-arial" font-family="Arial"></mj-class>
+      <mj-class name="ff-helvetica" font-family="Helvetica"></mj-class>
+
+      <mj-raw>
+        <!-- FONT WEIGHT -->
+      </mj-raw>
+      <mj-class name="fw-100" font-weight="100"></mj-class>
+      <mj-class name="fw-200" font-weight="200"></mj-class>
+      <mj-class name="fw-300" font-weight="300"></mj-class>
+      <mj-class name="fw-400" font-weight="400"></mj-class>
+      <mj-class name="fw-500" font-weight="500"></mj-class>
+      <mj-class name="fw-600" font-weight="600"></mj-class>
+
+      <mj-raw>
+        <!-- FONT SIZE -->
+      </mj-raw>
+      <mj-class name="fs-xxs" font-size="10px" letter-spacing="0.1px"></mj-class>
+      <mj-class name="fs-xs" font-size="11px" letter-spacing="0.2px"></mj-class>
+      <mj-class name="fs-sm" font-size="13px" letter-spacing="0.2px"></mj-class>
+      <mj-class name="fs-md" font-size="14px" letter-spacing="0.2px"></mj-class>
+      <mj-class name="fs-lg" font-size="15px" letter-spacing="0.2px"></mj-class>
+      <mj-class name="fs-xl" font-size="18px" letter-spacing="0.2px"></mj-class>
+
+      <mj-raw>
+        <!-- SPACING Y -->
+      </mj-raw>
+      <mj-class name="py-0" padding-top="0px" padding-bottom="0px"></mj-class>
+      <mj-class name="py-1" padding-top="5px" padding-bottom="5px"></mj-class>
+      <mj-class name="py-2" padding-top="15px" padding-bottom="15px"></mj-class>
+      <mj-class name="py-3" padding-top="20px" padding-bottom="20px"></mj-class>
+      <mj-class name="py-4" padding-top="25px" padding-bottom="25px"></mj-class>
+
+      <mj-raw>
+        <!-- SPACING X -->
+      </mj-raw>
+      <mj-class name="px-0" padding-left="0px" padding-right="0px"></mj-class>
+      <mj-class name="px-1" padding-left="5px" padding-right="5px"></mj-class>
+      <mj-class name="px-2" padding-left="15px" padding-right="15px"></mj-class>
+      <mj-class name="px-3" padding-left="20px" padding-right="20px"></mj-class>
+      <mj-class name="px-4" padding-left="25px" padding-right="25px"></mj-class>
+
+      <mj-raw>
+        <!-- SPACING RIGHT -->
+      </mj-raw>
+      <mj-class name="pr-0" padding-right="0px"></mj-class>
+      <mj-class name="pr-1" padding-right="5px"></mj-class>
+      <mj-class name="pr-2" padding-right="15px"></mj-class>
+      <mj-class name="pr-3" padding-right="20px"></mj-class>
+      <mj-class name="pr-4" padding-right="25px"></mj-class>
+
+      <mj-raw>
+        <!-- SPACING LEFT -->
+      </mj-raw>
+      <mj-class name="ml-0" margin-left="0px"></mj-class>
+      <mj-class name="pl-0" padding-left="0px"></mj-class>
+      <mj-class name="pl-1" padding-left="5px"></mj-class>
+      <mj-class name="pl-2" padding-left="15px"></mj-class>
+      <mj-class name="pl-3" padding-left="20px"></mj-class>
+      <mj-class name="pl-4" padding-left="25px"></mj-class>
+
+      <mj-raw>
+        <!-- SPACING BOTTOM -->
+      </mj-raw>
+      <mj-class name="pb-0" padding-bottom="0px"></mj-class>
+      <mj-class name="pb-1" padding-bottom="5px"></mj-class>
+      <mj-class name="pb-2" padding-bottom="15px"></mj-class>
+      <mj-class name="pb-3" padding-bottom="20px"></mj-class>
+      <mj-class name="pb-4" padding-bottom="25px"></mj-class>
+
+      <mj-raw>
+        <!-- SPACING TOP -->
+      </mj-raw>
+      <mj-class name="pt-1" padding-top="5px"></mj-class>
+      <mj-class name="pt-2" padding-top="15px"></mj-class>
+      <mj-class name="pt-3" padding-top="20px"></mj-class>
+      <mj-class name="pt-4" padding-top="25px"></mj-class>
+
+      <mj-raw>
+        <!-- LINE HEIGHT -->
+      </mj-raw>
+      <mj-class name="lh-xs" line-height="14px"></mj-class>
+      <mj-class name="lh-sm" line-height="18px"></mj-class>
+      <mj-class name="lh-md" line-height="24px"></mj-class>
+      <mj-class name="lh-lg" line-height="27px"></mj-class>
+      <mj-class name="lh-xl" line-height="32px"></mj-class>
+      <mj-class name="lh-xxl" line-height="38px"></mj-class>
+
+      <mj-raw>
+        <!-- LETTER SPACING -->
+      </mj-raw>
+      <mj-class name="ls-md" letter-spacing="0.8px"></mj-class>
+      <mj-class name="ls-lg" letter-spacing="1px"></mj-class>
+
+      <mj-raw>
+        <!-- LINE -->
+      </mj-raw>
+      <mj-class
+       name="line"
+       border-color="#ededed"
+       border-style="solid"
+       border-width="1px"
+       padding="0px"></mj-class>
+
+      <mj-raw>
+        <!-- HEADING -->
+      </mj-raw>
+      <mj-class
+       name="heading"
+       align="left"
+       letter-spacing="0.2px"
+       color="#000"
+       font-family="Arial"
+       font-weight="600"></mj-class>
+
+      <mj-raw>
+        <!-- FONT HELVETICA -->
+      </mj-raw>
+      <mj-all font-family="Helvetica" color="#000"></mj-all>
+
+    </mj-attributes>
+
+    <mj-raw>
+      <!-- CUSTOM CSS -->
+    </mj-raw>
+    <mj-style>
+      .ls-md {
+        letter-spacing: 0.8px;
+      }
+
+      .ls-lg {
+        letter-spacing: 1px;
+      }
+
+      .button {
+        display: block;
+        position: relative;
+      }
+
+      .title {
+        text-align: left;
+        font-size: 14px;
+        letter-spacing: 0.2px;
+        font-family: Arial
+      }
+
+      .bd-left {
+        border-left: 1px solid #ededed;
+      }
+
+      .table tr {
+        font-family: Arial;
+      }
+
+      .table tr th {
+        border-bottom: 1px solid #ecedee;
+        text-align: left;
+        padding: 5px 0;
+        font-family: Arial;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+
+      .table tr td strong {
+        color: #777;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+      }
+
+      .table td {
+        font-size: 13px;
+      }
+
+      .product-variant {
+        display: block;
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: none;
+      }
+    </mj-style>
+  </mj-head>
+
+  <mj-body background-color="#f8f8f8">
+
+    <!-- HEADER -->
+    <mj-section full-width="full-width" background-color="#f8f8f8" padding="20px">
+      <mj-column width="100%" vertical-align="middle">
+        <mj-image
+         src="https://cdn.shopify.com/s/files/1/0638/4637/files/logo-emails.png"
+         href="https://www.brixtoltextiles.com"
+         width="150px">
+        </mj-image>
+      </mj-column>
+    </mj-section>
+
+    <mj-raw>
+      <!-- Begin Email -->
+    </mj-raw>
+    <mj-section
+     background-color="#ffffff"
+     full-width="full-width"
+     padding-left="25px"
+     padding-right="25px"
+     padding-bottom="15px">
+
+      <mj-column vertical-align="middle">
+
+
+        <mj-text mj-class="ff-arial fs-md fw-600 pb-4">
+          ORDER {{ order_name }}:
+          <span style="color:#777">{{ date | date: "%b %d %I:%M%p" }}</span>
+        </mj-text>
+
+        <mj-raw>{% if rewaxing %}</mj-raw>
+
+        <mj-text mj-class="ff-arial fs-lg fw-400 pb-4">
+          Hi {{ customer.first_name }}, Thanks for your rewax service order. You now need to ship your waxed cotton garment to us here in Stockholm, Sweden. Below you will find the shipping address and your rewaxing service slip. Please be sure to print and include the rewaxing service slip with your garment when sending it to us.
+        </mj-text>
+        <mj-raw>{% else %}</mj-raw>
+        <mj-text mj-class="ff-arial fs-lg fw-400 pb-3">
+          Hi {{ customer.first_name }}, we're getting your order ready to be shipped. We will notify you when it has been sent with the shipment information.
+        </mj-text>
+        <mj-raw>{% endif %}</mj-raw>
+
+      </mj-column>
+    </mj-section>
+
+    <mj-raw>{% if rewaxing %}</mj-raw>
+    <mj-divider mj-class="line" />
+
+    <mj-section
+     full-width="full-width"
+     background-color="#f8f8f8"
+     border-top="1px #ecedee"
+     padding-top="20px"
+     padding-bottom="10px"
+     padding-left="25px"
+     padding-right="25px">
+
+      <mj-column width="48%" mj-class="pr-4">
+
+        <mj-text mj-class="ff-arial fs-lg fw-600 pb-2 gray-400" css-class="ls-lg">
+          REWAXING SLIP
+        </mj-text>
+
+        <mj-text mj-class="fs-sm fw-400 pb-2 black lh-xs">
+          Please print your rewaxing service slip and include it with your garment:
+        </mj-text>
+
+        <mj-button mj-class="ff-arial pl-0 fs-xs fw-500 lh-xxs"
+         css-class="ls-md button"
+         background-color="#f8f8f8"
+         align="left"
+         border="1px solid #111111"
+         border-radius="3px"
+         href="https://slipper.brixtol.com/#!/rewaxing?{{ rewaxing_slip | strip }}">
+          PRINT REWAX SLIP
+        </mj-button>
+      </mj-column>
+
+      <mj-column width="45%" mj-class="pl-4" css-class="bd-left">
+
+        <mj-text mj-class="ff-arial fs-lg fw-600 pb-3 pl-2 gray-400" css-class="ls-lg">
+          SEND GARMENT TO
+        </mj-text>
+
+        <mj-text mj-class="ff-arial fs-md fw-600 pb-1 pl-2" css-class="ls-lg">
+          BRIXTOL TEXTILES
+        </mj-text>
+
+        <mj-text mj-class="fs-md fw-400 pb-2 pl-2 black lh-sm">
+          Hantverkargatan 20<br>
+          Stockholm, 112 21<br>
+          Sweden
+        </mj-text>
+      </mj-column>
+
+    </mj-section>
+
+    <mj-divider mj-class="line" />
+
+    <mj-raw>{% endif %}</mj-raw>
+
+    <mj-section
+     background-color="#ffffff"
+     full-width="full-width"
+     padding="0 25px">
+
+      <mj-column>
+
+        <mj-table padding="0" css-class="table">
+
+          <tr>
+            <th colspan="2">Product</th>
+            <th>Size</th>
+            <th style="text-align:center;">Qty</th>
+            <th style="text-align:right; padding-right:20px">Price</th>
+          </tr>
+
+          <mj-raw>{% for line in line_items %}</mj-raw>
+          <mj-raw>
+
+            <!-- PRODUCT TITLE  -->
+            {%- capture line_title -%}
+            {% if line.product.title %}
+            {{- line.product.title -}}
+            {%- else -%}
+            {{- line.title -}}
+            {%- endif -%}
+            {%- endcapture -%}
+
+            <!-- PRODUCT SIZE  -->
+            {%- capture size -%}
+            {%- if line.variant.title != 'Default Title' -%}
+            <span css-class="product-variant">
+              {{ line.variant.title }}
+            </span>
+            {%- endif -%}
+            {%- endcapture -%}
+
+            <!-- PRODUCT PRICE -->
+            {%- capture line_price -%}
+            {%- if line.original_line_price != line.line_price -%}
+            <del style="color:#999999;">
+              {{- line.original_line_price | money -}}
+            </del>
+            {% endif %}
+            <span style="display: block;">
+              {{- line.line_price | money -}}
+            </span>
+            {%- endcapture -%}
+          </mj-raw>
+
+          <tr style="border-bottom: 1px solid #ecedee;">
+            <td style="width: 85px;">
+              <img
+               src="{{ line | img_url: 'medium' }}"
+               style="width: 60px; margin: 10px 0;">
+            </td>
+            <td>
+              {{ line_title }}
+              <span style="display: block; color: #888; font-size: 10px;">
+                {{ line.product.vendor | upcase }}
+              </span>
+            </td>
+            <td style="font-weight:600; font-size: 11px;">
+              {{ size | upcase }}
+            </td>
+            <td style="font-weight:600; text-align:center;">
+              {{ line.quantity }}
+            </td>
+            <td style="font-weight:600; text-align:right;">
+              {{ line_price }}
+            </td>
+          </tr>
+          <mj-raw>{% endfor %}</mj-raw>
+
+          <tr style="line-height: 30px; text-align:right;">
+            <td
+             colspan="4"
+             style="text-align: right; padding-right: 5px;">
+              <strong>SUBTOTAL:</strong>
+            </td>
+            <td style="font-weight: 600;">
+              {{ subtotal_price | money }}
+            </td>
+          </tr>
+
+          <tr style="border-top: 1px solid #ecedee; line-height: 30px; text-align:right;">
+            <td
+             colspan="4"
+             style="padding-right: 5px;">
+              <strong>SHIPPING:</strong>
+            </td>
+            <td style="font-weight:600; ">
+              {{ shipping_price | money  }}
+            </td>
+          </tr>
+
+          <mj-raw>{% if discounts_savings > 0 %}</mj-raw>
+          <tr style="border-top: 1px solid #ecedee; line-height: 30px; text-align:right;">
+            <td
+             colspan="4"
+             style="text-align:right; padding-right: 5px;">
+              <strong>DISCOUNT:</strong>
+            </td>
+            <td style="font-weight: 600;">
+              {{ discounts_savings | money  }}
+            </td>
+          </tr>
+
+          <mj-raw>{% endif %}</mj-raw>
+
+          <tr style="border-top: 1px solid #ecedee; line-height: 30px;">
+            <td colspan="2">
+              <a href="{{ order.order_status_url }}">
+                View order {{ order_name }}
+              </a>
+            </td>
+            <td
+             colspan="2"
+             style="text-align:right; padding-right: 5px;">
+              <strong>TOTAL:</strong>
+            </td>
+            <td style="text-align:right; font-weight: 600;">
+              {{ total_price | money }}
+            </td>
+          </tr>
+
+        </mj-table>
+
+
+        <mj-divider mj-class="line"></mj-divider>
+
+
+      </mj-column>
+    </mj-section>
+
+    <mj-section
+     background-color="#ffffff"
+     full-width="full-width"
+     padding-top="0px"
+     padding-left="25px"
+     padding-right="25px"
+     padding-bottom="40px">
+
+      <mj-column width="48%" vertical-align="middle">
+
+        <mj-text mj-class="ff-arial pt-4 fs-xs gray-300 pb-4">
+          SHIPPING INFORMATION
+        </mj-text>
+
+        <mj-raw>
+          <!-- SHIPPING INFORMATION-->
+        </mj-raw>
+        <mj-text mj-class="heading fs-sm pb-2">
+          <span style="color:#666">
+            {% for shipping_method in shipping_methods %}
+            {{ shipping_method.title | upcase }}
+            {% endfor %}
+          </span>
+        </mj-text>
+        <mj-text mj-class="fs-sm fw-600 gray-400 pb-1">
+          {{ shipping_address.name }}
+        </mj-text>
+        <mj-text mj-class="fs-sm fw-500 pb-2 lh-sm">
+          {{ shipping_address.street }}<br>
+          {{ shipping_address.city }}, {{ shipping_address.province }} <br>
+          {{ shipping_address.country }}, {{ shipping_address.zip }}
+        </mj-text>
+
+        <mj-raw>
+          <!-- SHIPPING INFORMATION-->
+        </mj-raw>
+
+        <mj-raw>{% unless note == blank %}</mj-raw>
+
+        <mj-text mj-class="ff-arial fs-md fw-600 pb-2">
+          NOTE
+        </mj-text>
+        <mj-text mj-class="fs-sm fw-500 pb-2 lh-sm gray-400">
+          {{ note }}
+        </mj-text>
+
+        <mj-raw>{% endunless %}</mj-raw>
+
+      </mj-column>
+      <mj-column width="48%" mj-class="pl-4" css-class="bd-left">
+
+        <mj-text mj-class="ff-arial pt-4 fs-xs gray-300 pb-4">
+          BILLING INFORMATION
+        </mj-text>
+
+        <mj-raw>
+          <!-- SHIPPING INFORMATION-->
+        </mj-raw>
+
+        <mj-text mj-class="fs-sm fw-600 gray-400 pb-1">
+          {{ billing_address.first_name }}&nbsp;{{ billing_address.last_name }}
+        </mj-text>
+        <mj-text mj-class="fs-sm fw-500 pb-2 lh-sm">
+          {{ billing_address.street }}<br>
+          {{ billing_address.city }}, {{ billing_address.province }} <br>
+          {{ billing_address.country }}, {{ billing_address.zip }}
+        </mj-text>
+
+      </mj-column>
+
+    </mj-section>
+
+
+    <mj-raw>
+      <!-- End Email -->
+    </mj-raw>
+
+    <mj-raw>
+      <!-- Copyright > Automated Response -->
+    </mj-raw>
+
+    <mj-divider mj-class="line" />
+
+    <mj-section
+     background-color="#f9f9f9"
+     padding-top="10px"
+     padding-bottom="0"
+     full-width="full-width">
+
+      <mj-column width="100%" vertical-align="bottom">
+
+        <mj-social
+         mode="horizontal"
+         inner-padding="8px"
+         icon-size="18px">
+          <mj-social-element
+           padding-right="15px"
+           href="https://www.twitter.com/brixtoltextiles"
+           src="https://brixtol.cloud/icons/twitter.svg">
+          </mj-social-element>
+          <mj-social-element
+           href="https://www.facebook.com/brixtoltextiles"
+           src="https://brixtol.cloud/icons/facebook.svg">
+          </mj-social-element>
+          <mj-social-element
+           href="https://instagram.com/brixtoltextiles"
+           src="https://brixtol.cloud/icons/instagram.svg">
+          </mj-social-element>
+          <mj-social-element
+           href="https://pinterest.com/brixtol"
+           src="https://brixtol.cloud/icons/pinterest.svg">
+          </mj-social-element>
+          <mj-social-element
+           href="https://www.linkedin.com/company/brixtol"
+           src="https://brixtol.cloud/icons/linkedin.svg">
+          </mj-social-element>
+          <mj-social-element
+           href="https://www.youtube.com/channel/UCqNtkC5NpW9OkL0wkS9H83g"
+           src="https://brixtol.cloud/icons/youtube.svg">
+          </mj-social-element>
+          <mj-social-element
+           href="https://www.brixtol.com/pages/contact"
+           src="https://brixtol.cloud/icons/mail.svg">
+          </mj-social-element>
+
+        </mj-social>
+      </mj-column>
+    </mj-section>
+
+
+    <mj-section full-width="full-width" background-color="#f9f9f9" padding="0">
+      <mj-column width="100%" vertical-align="middle">
+        <mj-text align="center" font-size="9.5px" color="#7e7e7e" line-height="15px">
+          <p>
+            Automated email sent from <a href="https://www.brixtoltextiles.com" style="color:#444;">BRIXTOL TEXTILES</a> of <a href="https://www.sunday-seven.com" target="_blank" style="color:#444;">Söndag Den Sjunde</a> AB Fashion Agency.
+            <br> VAT no: <strong>SE556840368601</strong> | Trademark no: <strong>30870</strong> | Stockholm, Sweden. All rights reserved.
+          </p>
+        </mj-text>
+        <mj-divider border-color="#eee" border-style="solid" border-width="1px" padding-bottom="10px" padding-top="10px"></mj-divider>
+        <mj-text align="center" font-size="9.5px" color="#7e7e7e" line-height="15px">
+          <p>
+            This is an automated email. This email has been delivered to all those who have been approved and subscribed to order notifications.<br>
+            Refer all contact and questions to <a href="https://www.brixtol.com/support" target="_blank" style="color:#444;">brixtol.com/support</a> or reach admin via <a href="mailto:help@brixtol.com" target="_blank" style="color:#444;">info@brixtol.com</a>
+          </p>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

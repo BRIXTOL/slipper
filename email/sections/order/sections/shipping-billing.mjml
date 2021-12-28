@@ -1,0 +1,43 @@
+<mj-wrapper padding="0">
+  <mj-section
+    css-class="desktop"
+    background-color="#ffffff"
+    full-width="full-width"
+    padding-top="0px"
+    padding-left="40px"
+    padding-right="15px"
+    padding-bottom="40px">
+
+    <!-- SHIPPING ADDRESS DESKTOP -->
+    <mj-column css-class="desktop">
+      <mj-include path="./includes/billing-address.mjml" />
+    </mj-column>
+
+    <!-- BILLING ADDRESS DESKTOP -->
+    <mj-column mj-class="pl-4 bd-left" css-class="desktop">
+      <mj-include path="./includes/shipping-address.mjml" />
+    </mj-column>
+
+  </mj-section>
+
+  <mj-section
+    css-class="mobile"
+    background-color="#ffffff"
+    full-width="full-width"
+    padding-top="0px"
+    padding-left="15px"
+    padding-right="15px"
+    padding-bottom="40px">
+
+    <!-- SHIPPING ADDRESS MOBILE -->
+    <mj-column css-class="mobile">
+      <mj-include path="./includes/shipping-address.mjml" />
+    </mj-column>
+
+    <!-- BILLING ADDRESS MOBILE -->
+    <mj-column mj-class="bd-top" css-class="mobile">
+      <mj-include path="./includes/billing-address.mjml" />
+    </mj-column>
+
+  </mj-section>
+</mj-wrapper>

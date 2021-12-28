@@ -1,0 +1,265 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      <mj-text padding="0" />
+      <mj-all font-family="Helvetica" color="#000" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body>
+    <mj-container background-color="#f8f8f8">
+
+      <!-- HEADER -->
+      <mj-section full-width="full-width" background-color="#f8f8f8" padding="20px">
+        <mj-column width="100%" vertical-align="middle">
+          <mj-image
+           src="https://cdn.shopify.com/s/files/1/0638/4637/files/logo-emails.png"
+           href="https://www.brixtoltextiles.com"
+           width="150px">
+          </mj-image>
+        </mj-column>
+      </mj-section>
+
+      <mj-raw>
+        <!-- Begin Email -->
+      </mj-raw>
+      <mj-section
+       background-color="#ffffff"
+       full-width="full-width"
+       padding-left="25px"
+       padding-right="25px"
+       padding-bottom="40px">
+
+        <mj-column vertical-align="middle">
+
+
+          <mj-text mj-class="ff-arial fs-md fw-600 pb-4">
+            ORDER {{ order_name }}:
+            <span style="color:#777">{{ date | date: "%b %d %I:%M%p" }}</span>
+          </mj-text>
+
+          <mj-text align="left" font-size="14px" letter-spacing="0.2px" color="#000" font-family="Arial" padding="10px 0 10px 0" font-weight="400">
+            {% if rewaxing %}
+
+            Hi {{ customer.first_name }}, Thanks for your service order. You now need to ship your waxed cotton garment to us here in Stockholm, Sweden. Below you will find the shipping address and your rewaxing service slip. Please be sure to print and include your rewaxing service slip with your garment when sending it to us.
+
+            {% else %}
+
+            Hi {{ customer.first_name }}, we're getting your order ready to be shipped. We will notify you when it has been sent with the shipment information.
+
+            {% endif %}
+          </mj-text>
+
+        </mj-column>
+      </mj-section>
+      <mj-section full-width="full-width" background-color="{% if rewaxing %}#f8f8f8{% endif %}" padding="{% if rewaxing %}15px 25px{% endif %}">
+        <mj-column width="60%">
+          <mj-text align="left" font-size="15px" letter-spacing="0.2px" color="#999999" font-family="Arial" padding="15px 0" text-transform="uppercase"
+           font-weight="600">
+            {% if rewaxing %}
+            REWAXING SLIP:
+            {% endif %}
+          </mj-text>
+
+          <mj-text align="left" font-size="12px" letter-spacing="0.2px" color="#000" font-family="Arial" padding-top="0" font-weight="400">
+            {% if rewaxing %}
+            Please print your rewaxing service slip and include<br>
+            it with your garment:
+            {% endif %}
+          </mj-text>
+          <mj-text padding="15px 0">
+            {% if rewaxing %}
+            <a href="https://slipper.brixtol.com/#!/rewaxing?{{ rewaxing_slip | strip }}" style="border: 1px solid #111111; color: #111111; font-size: 12px; padding: 8px 16px;text-decoration: none;">
+
+              View Rewaxing Service Slip
+            </a>
+            {% endif %}
+          </mj-text>
+        </mj-column>
+        <mj-column width="40%" vertical-align="middle">
+          <mj-text align="left" font-size="15px" letter-spacing="0.2px" color="#999999" font-family="Arial" padding-top="15px" text-transform="uppercase"
+           font-weight="600">
+            {% if rewaxing %}
+            SEND GARMENT TO:
+            {% endif %}
+          </mj-text>
+
+          <mj-text align="left" font-size="13px" letter-spacing="0.2px" color="#000" font-family="Arial" padding-top="15" font-weight="600">
+            {% if rewaxing %}
+            BRIXTOL TEXTILES
+            {% endif %}
+          </mj-text>
+          <mj-text align="left" font-size="13px" letter-spacing="0.2px" color="#000" font-family="Arial" padding-top="5" font-weight="400">
+            {% if rewaxing %}
+            Hantverkargatan 20
+            <br> Stockholm, 112 21
+            <br> Sweden
+            {% endif %}
+          </mj-text>
+        </mj-column>
+      </mj-section>
+
+      <mj-section background-color="#ffffff"
+       full-width="full-width"
+       padding="35px 25px 15px 25px">
+        <mj-column margin="0">
+
+
+          <mj-table padding="0" font-family="Arial">
+            <tr style="border-bottom: 1px solid #efefef;
+                     font-size: 12px;
+                     font-weight: 600;
+                     text-transform: uppercase;">
+              <td style="padding:0px; width:90px;">
+                Product
+              </td>
+              <td></td>
+              <td style="text-align:center;">
+                Qty
+              </td>
+              <td style="text-align:right;
+                       padding-right: 15px; ">
+                Price
+              </td>
+            </tr>
+            {% for line in line_items %}
+            <tr style="padding: 15px 0;
+                     border-bottom: 1px solid #efefef;
+                     {% if forloop.last == true  %}
+                     padding-bottom: 0;
+                     {% endif %}">
+              <td style="padding:0px;
+                       width:90px;">
+                <img src="{{ line | img_url: 'medium' }}" style="width: 60px;
+                                                               margin: 10px 0;">
+              </td>
+              <td style="text-align: left;
+                       font-size: 13px;">
+                {% if line.product.title %}
+                {% assign line_title = line.product.title %}
+                {% else %}
+                {% assign line_title = line.title %}
+                {% endif %}
+                {{ line_title }}
+                {% if line.variant.title != 'Default Title' %}
+                <span style="display:block;
+                           font-size: 12px;
+                           font-weight: 500;
+                           text-transform:none;">
+                  {{ line.variant.title }}
+                </span>
+                {% endif %}
+                <span style="display:block;
+                           color: #888888;
+                           font-size: 12px;">
+                  {{ line.product.vendor }}
+                </span>
+              </td>
+              <td style="text-align:center;
+                       font-size: 13px;
+                       font-weight:600;">
+                {{ line.quantity }}
+              </td>
+              <td style="text-align:right;
+                       padding-right: 15px;
+                       font-size: 14px;
+                       font-weight:600;">
+                {% if line.original_line_price != line.line_price %}
+                <del style="color:#999">
+                  {{ line.original_line_price | money }}
+                </del>
+                {% endif %}
+                <span style="display:block;">
+                  {{ line.line_price | money }}
+                </span>
+              </td>
+            </tr>
+            {% endfor %}
+          </mj-table>
+        </mj-column>
+      </mj-section>
+      <mj-section vertical-align="left"
+       background-color="#ffffff"
+       full-width="full-width"
+       padding-top="0px"
+       padding-left="25px"
+       padding-right="25px"
+       padding-bottom="40px">
+        <mj-column vertical-align="middle">
+          <mj-text padding="10px 0">
+            <a href="https://{{ shop.permanent_domain }}/admin/orders/{{ id }}" style="border: 1px solid #111111; color: #111111; font-size: 11px; padding: 8px 16px;text-decoration: none;">
+              View order {{order_name}}
+            </a>
+          </mj-text>
+
+
+        </mj-column>
+      </mj-section>
+      <!-- End Email -->
+
+
+
+
+      <!-- Copyright > Automated Response -->
+      <mj-section background-color="#fff" padding="0px" full-width="full-width">
+        <mj-column width="100%" vertical-align="base">
+          <mj-social
+           mode="horizontal"
+           display="tw fb in pt ln yt em"
+           icon-size="33px"
+           inner-padding="2px"
+           padding="8px"
+           text-mode="false"
+           container-background-color="#fff"
+
+           tw-icon-color="#fff"
+           tw-href="https://www.twitter.com/brixtoltextiles"
+           tw-icon="https://cdn-images.mailchimp.com/icons/social-block-v2/light-twitter-96.png"
+
+           in-icon-color="#fff"
+           in-href="https://instagram.com/brixtoltextiles"
+           in-icon="https://cdn-images.mailchimp.com/icons/social-block-v2/light-instagram-96.png"
+
+           em-icon-color="#fff"
+           em-href="https://www.brixtol.com/pages/contact"
+           em-icon="https://cdn-images.mailchimp.com/icons/social-block-v2/light-forwardtofriend-96.png"
+
+           pt-icon-color="#fff"
+           pt-href="https://pinterest.com/brixtol"
+           pt-icon="https://cdn-images.mailchimp.com/icons/social-block-v2/light-pinterest-96.png"
+
+           ln-icon-color="#fff"
+           ln-href="https://instagram.com/brixtoltextiles"
+           ln-icon="https://cdn-images.mailchimp.com/icons/social-block-v2/light-linkedin-96.png"
+
+           fb-icon-color="#fff"
+           fb-href="https://www.facebook.com/brixtoltextiles"
+           fb-icon="https://cdn-images.mailchimp.com/icons/social-block-v2/light-facebook-96.png"
+           yt-icon-color="#fff"
+           yt-href="https://www.youtube.com/channel/UCqNtkC5NpW9OkL0wkS9H83g"
+           yt-icon="https://cdn-images.mailchimp.com/icons/social-block-v2/light-youtube-96.png" />
+        </mj-column>
+      </mj-section>
+
+      <mj-section full-width="full-width" background-color="#f9f9f9" padding="10px">
+        <mj-column width="100%" vertical-align="middle">
+          <mj-text align="center" font-size="9.5px" color="#7e7e7e" line-height="15px">
+            <p>
+              Copyright BRIXTOL of <a href="http://www.sunday-seven.com" target="_blank" style="color:#444;">Söndag Den Sjunde</a> AB Fashion Agency.<br>
+              VAT no: <b>SE556840368601</b> | Trademark no: <b>30870</b> | Stockholm, Sweden. All rights reserved.
+            </p>
+          </mj-text>
+          <mj-divider border-color="#eee" border-style="solid" border-width="1px" padding-bottom="10px" padding-top="10px">
+          </mj-divider>
+          <mj-text align="center" font-size="9.5px" color="#7e7e7e" line-height="15px">
+
+            <p>
+              This is an automated email. This email has been delivered to all those who have been approved and subscribed to order notifications.<br>
+              Refer all contact and questions to <a href="https://www.brixtol.com/support" target="_blank" style="color:#444;">brixtol.com/support</a> or reach admin via <a href="mailto:help@brixtol.com" target="_blank" style="color:#444;">info@brixtol.com</a>
+            </p>
+          </mj-text>
+        </mj-column>
+      </mj-section>
+
+    </mj-container>
+  </mj-body>
+</mjml>

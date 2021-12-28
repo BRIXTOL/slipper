@@ -1,0 +1,11 @@
+<mj-text mj-class="ff-arial fs-xs gray-300 py-4">
+  BILLING INFORMATION
+</mj-text>
+<mj-text mj-class="fs-sm fw-600 gray-400 pb-1">
+  {{ billing_address.first_name }}&nbsp;{{ billing_address.last_name }}
+</mj-text>
+<mj-text mj-class="fs-sm fw-500 pb-2 lh-sm">
+  {{ billing_address.street }}<br>
+  {{ billing_address.city }}, {{ billing_address.province }} <br>
+  {{ billing_address.country }}, {{ billing_address.zip }}
+</mj-text>

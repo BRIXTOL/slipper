@@ -1,0 +1,84 @@
+<mj-section padding="0 25px 50px 0">
+  <mj-column vertical-align="top">
+    <mj-accordion>
+      <mj-accordion-element>
+        <mj-accordion-title>
+          {{ amount_of_items }}
+        </mj-accordion-title>
+        <mj-accordion-text>
+          {{ items_in_shipment}}
+        </mj-accordion-text>
+      </mj-accordion-element>
+      <mj-accordion-element>
+        <mj-accordion-title>
+          SHIPPING INFORMATION
+        </mj-accordion-title>
+        <mj-accordion-text css-class="accordion-text">
+
+          You will receive a text message notification when your shipment arrives. In the event that our carrier cannot reach you, your shipment will be delivered to the <a href="{{- service_point -}}" class="fc-black">nearest service point</a> of your shipping location.
+
+          {% if fulfillment.tracking_numbers.size > 0 %}
+
+          {%- if has_tracking -%}
+
+          <h5>TRACKING</h5>
+
+          <a class="pt-2" href="{{ fulfillment.tracking_url }}">
+            {{ fulfillment.tracking_company }} {{ fulfillment.tracking_numbers.first }}
+          </a>
+
+          {% elsif fulfillment.tracking_numbers.size == 1 %}
+
+          <h5>TRACKING NUMBER</h5>
+          <p>{{ fulfillment.tracking_numbers.first }}</p>
+
+          {% else %}
+
+          <h5>TRACKING NUMBERS</h5>
+
+          <ul>
+            {% for tracking_number in fulfillment.tracking_numbers %}
+            <li>{{ tracking_number }}</li>
+            {% endfor %}
+          </ul>
+
+          {% endif %}
+          {% endif %}
+
+          <h5>SHIPMENT ADDRESS</h5>
+
+          <h6>{{ shipping_address.name }}</h6>
+
+          <p>
+            {{ shipping_address.street }}<br>
+            {{ shipping_address.city }}, {{ shipping_address.province }} <br>
+            {{ shipping_address.country }}, {{ shipping_address.zip }}
+          </p>
+
+          {% unless note == blank %}
+          <h5>NOTE</h5>
+          <p>{{ note }}</p>
+          {% endunless %}
+
+        </mj-accordion-text>
+      </mj-accordion-element>
+      <mj-accordion-element>
+        <mj-accordion-title>RETURN POLICY</mj-accordion-title>
+        <mj-accordion-text>
+          <span style="font-weight: 600;font-family: Arial;font-size: 12px;display:block;padding-bottom: 10px;">14 DAYS TO RETURN</span>
+          <span style="line-height: 17px;font-size: 11px;">
+            If you are unhappy with your order or wish to exchange for another size/colour you have <strong>14 days</strong> to return it to us. We have included all the necessary documents and return shipping labels in your package. We have a strict <strong>14 Day Return Policy</strong> which starts the day you receive your order. If you return your order to us after the 14 days have passed we will deduct a handling and shipping fee cost of <strong>{{ policy_surchage }}</strong> from your account and return the order to you. Please refer to the <a style="color:#111;" href="https://brixtoltextiles.com/pages/returns-and-exchanges">Returns and Exchanges policy</a> on our website for additional information.
+            <span style="font-weight: 600;font-family: Arial;font-size: 12px;display:block;padding-top: 10px;padding-bottom: 10px;">FREE RETURNS</span>
+            We offer free returns on products that exceed <strong>{{ return_threshold }}</strong> and are shipped to countries located within the European Union. Products below this amount we will deduct a return fee from your refund total. Please refer to the <a style="color:#111;" href="https://brixtoltextiles.com/pages/returns-and-exchanges#return-fees">Return Fees</a> section on our website for the incurred surcharges.
+          </span>
+          <span style="font-weight: 600;font-family: Arial;font-size: 12px;display:block;padding-top: 15px;padding-bottom: 10px;">DOCUMENTS</span>
+          <span style="line-height: 17px;font-size: 11px;">
+            <a style="color: #111; text-decoration: none; display: block; padding-bottom: 10px; font-family: Arial;" href="{{ return_slip }}">RETURN SLIP</a>
+          </span>
+
+        </mj-accordion-text>
+      </mj-accordion-element>
+    </mj-accordion>
+
+  </mj-column>
+</mj-section>

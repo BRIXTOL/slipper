@@ -1,0 +1,50 @@
+ <mj-section
+   background-color="#ffffff"
+   full-width="full-width"
+   padding-left="25px"
+   padding-right="25px"
+   padding-bottom="15px">
+
+   <mj-column vertical-align="middle">
+
+     <!-- FULFILLMENT TRACKING -->
+     <mj-raw>{% if fulfillment.tracking_numbers.size > 0 %}</mj-raw>
+
+     <!-- FULFILLMENT COMPANY  -->
+
+     <mj-raw>{% if fulfillment.tracking_company %}</mj-raw>
+     <mj-text mj-class="ff-arial fs-md">
+       SHIPPED WITH <strong>{{ fulfillment.tracking_company }}</strong>
+     </mj-text>
+     <mj-raw>{% endif %}</mj-raw>
+
+     <!-- FULFILLMENT TRACKING NUMBER  -->
+
+     <mj-raw>{% if fulfillment.tracking_numbers.size == 1 %}</mj-raw>
+
+     <mj-text mj-class="ff-arial fs-md pt-1">
+       <strong>TRACKING NO:</strong> {{ fulfillment.tracking_numbers.first }}
+     </mj-text>
+
+     <mj-raw>{% endif %}</mj-raw>
+
+
+     <mj-raw>{% if fulfillment.tracking_numbers.size > 1 %}</mj-raw>
+
+     <mj-text mj-class="ff-arial fs-md pt-1">
+       <strong>TRACKING NO:</strong>
+     </mj-text>
+
+     <mj-raw>{% for tracking_number in fulfillment.tracking_numbers %}</mj-raw>
+
+     <mj-text mj-class="ff-arial fs-xs pt-1 pl-4">
+       - {{ tracking_number }}<br>
+     </mj-text>
+
+     <mj-raw>{% endfor %}</mj-raw>
+     <mj-raw>{% endif %}</mj-raw>
+     <mj-raw>{% endif %}</mj-raw>
+
+
+   </mj-column>
+ </mj-section>

@@ -1,0 +1,46 @@
+<mj-section
+  background-color="#f9f9f9"
+  padding-top="10px"
+  padding-bottom="0"
+  full-width="full-width">
+  <mj-column width="100%" vertical-align="bottom">
+    <mj-social
+      mode="horizontal"
+      inner-padding="8px"
+      border-radius="0"
+      icon-size="20px">
+
+      <mj-social-element
+        href="https://instagram.com/brixtoltextiles"
+        mj-class="px-3"
+        src="https://brixtol.cloud/social/instagram.svg">
+      </mj-social-element>
+
+
+      <mj-social-element
+        href="https://www.facebook.com/brixtoltextiles"
+        src="https://brixtol.cloud/social/facebook.svg">
+      </mj-social-element>
+      <mj-social-element
+        href="https://pinterest.com/brixtol"
+        src="https://brixtol.cloud/social/pinterest.svg">
+      </mj-social-element>
+      <mj-social-element
+        href="https://www.twitter.com/brixtoltextiles"
+        src="https://brixtol.cloud/social/twitter.svg">
+      </mj-social-element>
+      <mj-social-element
+        href="https://www.linkedin.com/company/brixtol"
+        src="https://brixtol.cloud/social/linkedin.svg">
+      </mj-social-element>
+      <mj-social-element
+        href="https://www.youtube.com/channel/UCqNtkC5NpW9OkL0wkS9H83g"
+        src="https://brixtol.cloud/social/youtube.svg">
+      </mj-social-element>
+      <mj-social-element
+        href="https://www.brixtol.com/pages/contact"
+        src="https://brixtol.cloud/social/email.svg">
+      </mj-social-element>
+    </mj-social>
+  </mj-column>
+</mj-section>

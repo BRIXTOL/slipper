@@ -1,0 +1,31 @@
+<mj-section
+  background-color="#ffffff"
+  full-width="full-width"
+  padding-left="25px"
+  padding-right="25px"
+  padding-bottom="15px">
+
+  <mj-column vertical-align="middle">
+
+    <mj-text mj-class="ff-arial fs-md fw-600 pb-4">
+      ORDER
+      <a href="{{ order.order_status_url }}">{{ order_name }}</a>:
+      <span style="color:#777">{{ date | date: "%b %d %I:%M%p" }}</span>
+    </mj-text>
+
+    <mj-raw>{% if rewaxing %}</mj-raw>
+
+    <mj-text mj-class="ff-arial fs-md fw-400 pb-4 lh-sm">
+      Hi {{ customer.first_name }}, Thanks for your rewax service order. You now need to ship your waxed cotton garment to us here in Stockholm, Sweden. Below you will find the shipping address and your rewaxing service slip. Please be sure to print and include the rewaxing service slip with your garment when sending it to us.
+    </mj-text>
+
+    <mj-raw>{% else %}</mj-raw>
+
+    <mj-text mj-class="ff-arial fs-md fw-400 pb-3 lh-sm">
+      Hi {{ customer.first_name }}, Our warehouse personnel will begin to prepare your order for shipping. We will notify you when it has been sent with the shipment information. If you have any questions send an email to <a href="mailto:help@brixtoltextiles.com" style="color: #111;">help@brixtoltextiles.com</a> and someone from our team will be able to assist you.
+    </mj-text>
+
+    <mj-raw>{% endif %}</mj-raw>
+
+  </mj-column>
+</mj-section>

@@ -1,0 +1,129 @@
+ <mj-wrapper padding="0">
+   <mj-section
+     background-color="#ffffff"
+     full-width="full-width"
+     padding="0 15px">
+
+     <mj-column>
+       <mj-table
+         padding="0"
+         css-class="table-line-items">
+
+         <tr class="desktop ff-arial text-left">
+           <th colspan="2">PRODUCT</th>
+           <th>SIZE</th>
+           <th>QTY</th>
+           <th align="right">PRICE</th>
+         </tr>
+
+         <mj-raw>
+           {% for line in line_items %}
+         </mj-raw>
+
+         <mj-raw>
+
+           <!-- Product Title :: line_title -->
+           {%- capture line_title -%}
+           {% if line.product.title %}
+           {{- line.product.title -}}
+           {%- else -%}
+           {{- line.title -}}
+           {%- endif -%}
+           {%- endcapture -%}
+
+           <!-- Product Variant :: line_variant -->
+           {%- capture line_variant -%}
+           {%- if line.variant.title != 'Default Title' -%}
+           {{ line.variant.title | upcase }}
+           {%- else -%}
+           N/A
+           {%- endif -%}
+           {%- endcapture -%}
+
+           <!-- Product Price :: line_price -->
+           {%- capture line_price -%}
+           {%- if line.original_line_price != line.line_price -%}
+           <span class="discount">
+             {{- line.line_price | money -}}
+             <del>{{- line.original_line_price | money -}}</del>
+           </span>
+           {%- else -%}
+           {{- line.line_price | money -}}
+           {% endif %}
+           {%- endcapture -%}
+
+         </mj-raw>
+
+         <mj-raw>
+           <!-- DESKTOP -->
+         </mj-raw>
+
+
+         <tr class="desktop">
+           <td width="40px">
+             <a href="{{ line.url }}">
+               <img style="width: 100%; height: auto;" src="{{ line | img_url: 'medium' }}">
+             </a>
+           </td>
+           <td align="left" width="150px">
+             <a href="{{ line.url }}" class="title pl-2">
+               {{ line_title }}
+             </a>
+             <span class="vendor pl-2">
+               {{ line.product.vendor | upcase }}
+             </span>
+           </td>
+           <td width="60px">
+             <span class="variant">
+               X SMALL
+             </span>
+           </td>
+           <td align="center" width="20px">
+             <span class="quantity">
+               {{ line.quantity }}
+             </span>
+           </td>
+           <td align="right" width="80px">
+             <span class="price">
+               {{ line_price }}
+             </span>
+           </td>
+         </tr>
+
+         <mj-raw>
+           <!-- MOBILE -->
+         </mj-raw>
+
+         <tr class="mobile">
+           <td width="100px">
+             <a href="{{ line.url }}">
+               <img src="{{ line | img_url: 'medium' }}" width="80px" />
+             </a>
+           </td>
+           <td>
+             <a href="{{ line.url }}" class="title">
+               {{ line_title }}
+             </a>
+             <span class="vendor">
+               {{ line.product.vendor | upcase }}
+             </span>
+             <span class="quantity">
+               {{ line.quantity }}
+             </span>
+             <span class="variant">
+               {{ line_variant | upcase }}
+             </span>
+             <span class="price">
+               {{ line_price }}
+             </span>
+           </td>
+         </tr>
+
+         <mj-raw>
+           {% endfor %}
+         </mj-raw>
+
+       </mj-table>
+     </mj-column>
+   </mj-section>
+ </mj-wrapper>

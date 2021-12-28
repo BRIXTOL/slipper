@@ -1,0 +1,57 @@
+<mj-raw>
+  {% if rewaxing %}
+</mj-raw>
+
+<mj-wrapper padding="0 14px 10px 14px">
+
+  <mj-section
+    padding="0"
+    background-color="#f8f8f8"
+    border="1px solid #ecedee">
+
+    <mj-column
+      padding="15px 25px"
+      border-right="1px solid #ecedee">
+
+      <mj-text mj-class="ff-arial fs-lg fw-600 pb-2 gray-400" css-class="ls-lg">
+        REWAXING SLIP
+      </mj-text>
+
+      <mj-text mj-class="fs-sm fw-400 pb-2 black lh-xs">
+        Please print your rewaxing service slip and include it with your garment:
+      </mj-text>
+
+      <mj-button
+        mj-class="ff-arial pl-0 fs-xs fw-500 lh-xxs"
+        css-class="ls-md button"
+        background-color="#f8f8f8"
+        align="left"
+        border="1px solid #111111"
+        border-radius="3px"
+        href="https://slipper.brixtol.com/#!/rewaxing?{{ rewaxing_slip | strip }}">
+        PRINT REWAX SLIP
+      </mj-button>
+    </mj-column>
+
+    <mj-column
+      background-color="#f8f8f8"
+      padding="15px 25px">
+
+      <mj-text mj-class="ff-arial fs-lg fw-600 pb-3 pl-2 gray-400" css-class="ls-lg">
+        SEND GARMENT TO
+      </mj-text>
+      <mj-text mj-class="ff-arial fs-md fw-600 pb-1 pl-2" css-class="ls-lg">
+        BRIXTOL TEXTILES
+      </mj-text>
+      <mj-text mj-class="fs-md fw-400 pb-2 pl-2 black lh-sm">
+        Hantverkargatan 20<br>
+        Stockholm, 112 21<br>
+        Sweden
+      </mj-text>
+    </mj-column>
+  </mj-section>
+</mj-wrapper>
+
+<mj-raw>
+  {% endif %}
+</mj-raw>

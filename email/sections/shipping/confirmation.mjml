@@ -1,0 +1,36 @@
+<mjml>
+  <mj-head>
+
+    <!-- SHARED ATTRIBUTES -->
+    <mj-include path="./../../shared/attributes.mjml" />
+
+    <!-- CUSTOM CSS -->
+    <mj-include path="./style.css" type="css" inline="inline" />
+
+  </mj-head>
+
+  <mj-body background-color="#ffffff">
+
+    <!-- HEADER -->
+    <mj-include path="./../../shared/header.mjml" />
+
+    <!-- SHIPPING TITLE -->
+    <mj-include path="./sections/shipping-title.mjml" />
+
+    <!-- TEXT CONTENT -->
+    <mj-include path="./sections/text-content.mjml" />
+
+    <!-- TRACK SHIPMENT BUTTON -->
+    <mj-include path="./sections/track-shipment.mjml" />
+
+    <!-- LINE ITEMS  -->
+    <mj-include path="./sections/shipment-information.mjml" />
+
+    <!-- FOOTER SOCIALS -->
+    <mj-include path="./../../shared/social.mjml" />
+
+    <!-- FOOTER AUTOMATED -->
+    <mj-include path="./../../shared/footer-automated.mjml" />
+
+  </mj-body>
+</mjml>

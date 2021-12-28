@@ -1,0 +1,188 @@
+{%- comment -%} ------------------------- {%- endcomment -%}
+
+{%- assign return_threshold = '1,500 SEK' -%}
+{%- assign policy_surcharge = '200 SEK' -%}
+{%- assign return_slip = 'https://slipper.brixol.com/returns?id=' | append: order.id -%}
+
+{%- comment -%} ------------------------- {%- endcomment -%}
+
+{%- comment -%}
+
+  FULFILLMENT LOGIC
+
+  Preset captures for different fulfillment types.
+  This is mostly not applicable for Brixtol as we ship
+  complete orders but for the sake of brevity we apply
+  all cases.
+
+{%- endcomment -%}
+{%- if fulfillment.item_count == item_count -%}
+
+  {%- capture email_title -%}
+    Your order has been shipped.
+  {%- endcapture -%}
+
+  {%- capture email_body -%}
+    Your order has been fulfilled by our warehouse personnel and is on route to your shipping location. The shipment courier for your order is
+    <strong>&nbps;{{ fulfillment.tracking_company }}</strong>. You can track your shipment delivery status below.
+  {%- endcapture -%}
+
+{%- elsif fulfillment.item_count > 1 -%}
+
+  {%- if fulfillment_status == 'fulfilled' -%}
+
+    {%- capture email_title -%}
+      The last items in your order are on the way
+    {%- endcapture -%}
+
+    {%- capture email_body -%}
+      The last items in your order are on the way. Track your shipment to see the delivery status.
+    {%- endcapture -%}
+
+  {%- else -%}
+
+    {%- capture email_title -%}
+      Some items in your order are on the way
+    {%- endcapture -%}
+
+    {%- capture email_body -%}
+      Some items in your order are on the way. Track your shipment to see the delivery status.
+    {%- endcapture -%}
+
+  {%- endif -%}
+
+{%- else -%}
+
+  {%- if fulfillment_status == 'fulfilled' -%}
+
+    {%- capture email_title -%}
+      The last item in your order is on the way
+    {%- endcapture -%}
+
+    {%- capture email_body -%}
+      The last item in your order is on the way. Track your shipment to see the delivery status.
+    {%- endcapture -%}
+
+  {%- else -%}
+
+    {%- capture email_title -%}
+      One item in your order is on the way
+    {%- endcapture -%}
+
+    {%- capture email_body -%}
+      One item in your order is on the way. Track your shipment to see the delivery status.
+    {%- endcapture -%}
+
+  {%- endif -%}
+{%- endif -%}
+
+{%- comment -%}
+
+  ESTIMATED DELIVERY DATE
+
+  Generally not applicable for us as this is only
+  available for Shopify plus and all the other bullshit.
+
+{%- endcomment -%}
+{% capture email_emphasis -%}
+  Estimated delivery date:
+  <strong>{{fulfillment.estimated_delivery_at | date: "%B %-d, %Y"}}</strong>
+{% endcapture -%}
+
+{%- comment -%}
+
+  SERVICE POINT URL
+
+  Auto generater service point URL for
+  each shipping courier
+
+{%- endcomment -%}
+{%- if fulfillment.tracking_company -%}
+  {%- if fulfillment.tracking_company == 'DHL' -%}
+    {%- capture service_point -%}
+      https://locator.dhl.com/results?countryCode={{- shipping_address.country_code -}}&address={{- shipping_address.zip }}+{{- shipping_address.city }}+{{- shipping_address.street -}}+{{ shipping_address.country }}&resultUom=km
+    {%- endcapture -%}
+  {%- elsif fulfillment.tracking_company == 'UPS' -%}
+    {%- capture service_point -%}
+      https://www.ups.com/dropoff?country={{- shipping_address.country_code -}}
+    {%- endcapture -%}
+  {%- endif -%}
+{% endif %}
+
+
+{%- comment -%}
+
+  SHIPPING URL
+
+  Boolean condition for tracking URL
+
+{%- endcomment -%}
+{%- if
+  fulfillment.tracking_numbers.size == 1 and
+  fulfillment.tracking_company and
+  fulfillment.tracking_url -%}
+  {%- assign has_tracking = true -%}
+{%- endif -%}
+
+{%- comment -%}
+
+  ITEMS IN SHIPMENT
+
+  Capture table group of items included
+  in the shipment. This will render within
+  the accordion.
+
+{%- endcomment -%}
+{%- capture items_in_shipment -%}
+  <table class="table-shipping-items">
+
+    {%- for line in line_items -%}
+
+      <!-- Product Title :: line_title -->
+      {%- capture line_title -%}
+        {% if line.product.title %}
+          {{- line.product.title -}}
+        {%- else -%}
+          {{- line.title -}}
+        {%- endif -%}
+      {%- endcapture -%}
+
+      <!-- Product Variant :: line_variant -->
+      {%- capture line_variant -%}
+        {%- if line.variant.title != 'Default Title' -%}
+          {{ line.variant.title | upcase  }}
+        {%- else -%}
+          N/A
+        {%- endif -%}
+      {%- endcapture -%}
+
+
+      <tr>
+        <td width="35px">
+          <a href="{{ line.url }}">
+            <img style="width: 100%; height: auto;" src="{{ line | img_url: 'medium' }}">
+          </a>
+        </td>
+        <td>
+          <a href="{{ line.url }}" class="title pl-2">
+            {{ line_title }}
+          </a>
+          <span class="size pl-2">
+            {{ line_variant }}
+          </span>
+        </td>
+        <td class="quantity">
+          <span class="x">x</span>
+          {{ line.quantity }}
+        </td>
+      </tr>
+
+    {%- endfor -%}
+  </table>
+{%- endcapture -%}
+
+{%- if line_items.size > 1 -%}
+  {%- assign amount_of_items = line_items.size | append: ' ITEMS IN SHIPMENT' -%}
+{%- else -%}
+  {%- assign amount_of_items = line_items.size | append: ' ITEM IN SHIPMENT' -%}
+{%- endif -%}

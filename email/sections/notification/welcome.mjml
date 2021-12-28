@@ -1,0 +1,41 @@
+<mjml>
+  <mj-head>
+
+    <mj-raw>
+      <!-- REQUIRED LIQUID -->
+      <mj-include path="./liquid.mjml" />
+    </mj-raw>
+
+    <!-- SHARED ATTRIBUTES -->
+    <mj-include path="./../../shared/attributes.mjml" />
+
+    <!-- CUSTOM CSS -->
+    <mj-include path="./welcome.css" type="css" inline="inline" />
+
+  </mj-head>
+
+  <mj-body background-color="#ffffff">
+
+    <!-- HEADER -->
+    <mj-include path="./../../shared/header.mjml" />
+
+
+    <mj-section
+      background-color="#ffffff"
+      full-width="full-width"
+      padding="0 15px">
+      <mj-column>
+        <mj-text>
+
+        </mj-text>
+        <mj-image src="https://brixtol.cloud/email/welcome-woman.jpg" />
+      </mj-column>
+    </mj-section>
+
+
+    <!-- FOOTER -->
+    <mj-include path="./../../shared/social.mjml" />
+    <mj-include path="./../../shared/footer.mjml" />
+
+  </mj-body>
+</mjml>

@@ -1,0 +1,34 @@
+<mj-text mj-class="ff-arial fs-xs gray-300 py-4">
+  SHIPPING INFORMATION
+</mj-text>
+
+<!-- SHIPPING INFORMATION-->
+<mj-text mj-class="heading fs-sm pb-2">
+  {% for shipping_method in shipping_methods %}
+  {{ shipping_method.title | upcase }}
+  {% endfor %}
+</mj-text>
+<mj-text mj-class="fs-sm fw-600 gray-400 pb-1">
+  {{ shipping_address.name }}
+</mj-text>
+<mj-text mj-class="fs-sm fw-500 pb-2 lh-sm">
+  {{ shipping_address.street }}<br>
+  {{ shipping_address.city }}, {{ shipping_address.province }} <br>
+  {{ shipping_address.country }}, {{ shipping_address.zip }}
+</mj-text>
+
+<mj-raw>
+  {% unless note == blank %}
+</mj-raw>
+
+<mj-text mj-class="ff-arial fs-md fw-600 pb-2">
+  NOTE
+</mj-text>
+
+<mj-text mj-class="fs-sm fw-500 pb-2 lh-sm gray-400">
+  {{ note }}
+</mj-text>
+
+<mj-raw>
+  {% endunless %}
+</mj-raw>

@@ -1,0 +1,10 @@
+<!-- HEADER -->
+<mj-section full-width="full-width" background-color="#f8f8f8" padding="20px">
+  <mj-column width="100%" vertical-align="middle">
+    <mj-image
+     src="https://cdn.shopify.com/s/files/1/0638/4637/files/logo-emails.png"
+     href="https://www.brixtoltextiles.com"
+     width="150px">
+    </mj-image>
+  </mj-column>
+</mj-section>

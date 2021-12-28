@@ -1,0 +1,191 @@
+<mj-attributes>
+
+  <mj-text padding="0px"></mj-text>
+  <mj-class name="blue" color="blue"></mj-class>
+
+  <mj-raw>
+    <!-- BREAKPOINT -->
+  </mj-raw>
+  <mj-breakpoint width="480px" />
+
+  <mj-raw>
+    <!-- FONT COLORS -->
+  </mj-raw>
+  <mj-class name="white" color="#ffffff"></mj-class>
+  <mj-class name="black" color="#111111"></mj-class>
+  <mj-class name="green" color="#28a745"></mj-class>
+  <mj-class name="gray-100" color="#ecedee"></mj-class>
+  <mj-class name="gray-200" color="#666666"></mj-class>
+  <mj-class name="gray-300" color="#777777"></mj-class>
+  <mj-class name="gray-400" color="#999999"></mj-class>
+  <mj-class name="gray-500" color="#222222"></mj-class>
+
+  <mj-raw>
+    <!-- FONT FACE -->
+  </mj-raw>
+  <mj-class name="ff-arial" font-family="Arial"></mj-class>
+  <mj-class name="ff-helvetica" font-family="Helvetica"></mj-class>
+
+  <mj-raw>
+    <!-- FONT WEIGHT -->
+  </mj-raw>
+  <mj-class name="fw-100" font-weight="100"></mj-class>
+  <mj-class name="fw-200" font-weight="200"></mj-class>
+  <mj-class name="fw-300" font-weight="300"></mj-class>
+  <mj-class name="fw-400" font-weight="400"></mj-class>
+  <mj-class name="fw-500" font-weight="500"></mj-class>
+  <mj-class name="fw-600" font-weight="600"></mj-class>
+
+  <mj-raw>
+    <!-- FONT SIZE -->
+  </mj-raw>
+  <mj-class name="fs-xxs" font-size="10px" letter-spacing="0.1px"></mj-class>
+  <mj-class name="fs-xs" font-size="11px" letter-spacing="0.2px"></mj-class>
+  <mj-class name="fs-sm" font-size="13px" letter-spacing="0.2px"></mj-class>
+  <mj-class name="fs-md" font-size="14px" letter-spacing="0.2px"></mj-class>
+  <mj-class name="fs-lg" font-size="15px" letter-spacing="0.2px"></mj-class>
+  <mj-class name="fs-xl" font-size="18px" letter-spacing="0.2px"></mj-class>
+
+  <mj-raw>
+    <!-- SPACING Y -->
+  </mj-raw>
+  <mj-class name="py-0" padding-top="0px" padding-bottom="0px"></mj-class>
+  <mj-class name="py-1" padding-top="5px" padding-bottom="5px"></mj-class>
+  <mj-class name="py-2" padding-top="15px" padding-bottom="15px"></mj-class>
+  <mj-class name="py-3" padding-top="20px" padding-bottom="20px"></mj-class>
+  <mj-class name="py-4" padding-top="25px" padding-bottom="25px"></mj-class>
+
+  <mj-raw>
+    <!-- SPACING X -->
+  </mj-raw>
+  <mj-class name="px-0" padding-left="0px" padding-right="0px"></mj-class>
+  <mj-class name="px-1" padding-left="5px" padding-right="5px"></mj-class>
+  <mj-class name="px-2" padding-left="15px" padding-right="15px"></mj-class>
+  <mj-class name="px-3" padding-left="20px" padding-right="20px"></mj-class>
+  <mj-class name="px-4" padding-left="25px" padding-right="25px"></mj-class>
+
+  <mj-raw>
+    <!-- SPACING RIGHT -->
+  </mj-raw>
+  <mj-class name="bd-right" border-right="1px solid #ededed;"></mj-class>
+  <mj-class name="bd-left" border-left="1px solid #ededed;"></mj-class>
+  <mj-class name="bd-top" border-top="1px solid #ededed;"></mj-class>
+  <mj-class name="bd-bottom" border-bottom="1px solid #ededed;"></mj-class>
+
+  <mj-raw>
+    <!-- SPACING RIGHT -->
+  </mj-raw>
+  <mj-class name="pr-0" padding-right="0px"></mj-class>
+  <mj-class name="pr-1" padding-right="5px"></mj-class>
+  <mj-class name="pr-2" padding-right="15px"></mj-class>
+  <mj-class name="pr-3" padding-right="20px"></mj-class>
+  <mj-class name="pr-4" padding-right="25px"></mj-class>
+
+  <mj-raw>
+    <!-- SPACING LEFT -->
+  </mj-raw>
+  <mj-class name="ml-0" margin-left="0px"></mj-class>
+  <mj-class name="pl-0" padding-left="0px"></mj-class>
+  <mj-class name="pl-1" padding-left="5px"></mj-class>
+  <mj-class name="pl-2" padding-left="15px"></mj-class>
+  <mj-class name="pl-3" padding-left="20px"></mj-class>
+  <mj-class name="pl-4" padding-left="25px"></mj-class>
+
+  <mj-raw>
+    <!-- SPACING BOTTOM -->
+  </mj-raw>
+  <mj-class name="pb-0" padding-bottom="0px"></mj-class>
+  <mj-class name="pb-1" padding-bottom="5px"></mj-class>
+  <mj-class name="pb-2" padding-bottom="15px"></mj-class>
+  <mj-class name="pb-3" padding-bottom="20px"></mj-class>
+  <mj-class name="pb-4" padding-bottom="25px"></mj-class>
+
+  <mj-raw>
+    <!-- SPACING TOP -->
+  </mj-raw>
+  <mj-class name="pt-1" padding-top="5px"></mj-class>
+  <mj-class name="pt-2" padding-top="15px"></mj-class>
+  <mj-class name="pt-3" padding-top="20px"></mj-class>
+  <mj-class name="pt-4" padding-top="25px"></mj-class>
+
+  <mj-raw>
+    <!-- LINE HEIGHT -->
+  </mj-raw>
+  <mj-class name="lh-xs" line-height="14px"></mj-class>
+  <mj-class name="lh-sm" line-height="18px"></mj-class>
+  <mj-class name="lh-md" line-height="24px"></mj-class>
+  <mj-class name="lh-lg" line-height="27px"></mj-class>
+  <mj-class name="lh-xl" line-height="32px"></mj-class>
+  <mj-class name="lh-xxl" line-height="38px"></mj-class>
+
+  <mj-raw>
+    <!-- LETTER SPACING -->
+  </mj-raw>
+  <mj-class name="ls-md" letter-spacing="0.8px"></mj-class>
+  <mj-class name="ls-lg" letter-spacing="1px"></mj-class>
+
+  <mj-raw>
+    <!-- LINE -->
+  </mj-raw>
+  <mj-class
+    name="line"
+    border-color="#ededed"
+    border-style="solid"
+    border-width="1px"
+    padding="0px"></mj-class>
+
+  <mj-raw>
+    <!-- HEADING -->
+  </mj-raw>
+  <mj-class
+    name="heading"
+    align="left"
+    letter-spacing="0.2px"
+    color="#000"
+    font-family="Arial"
+    font-weight="600"></mj-class>
+
+
+  <mj-class name="shipping-billing"
+    background-color="#ffffff"
+    full-width="full-width"
+    padding-top="0px"
+    padding-left="25px"
+    padding-right="25px"
+    padding-bottom="40px"></mj-class>
+
+  <mj-class
+    name="shipping"
+    width="48%"
+    vertical-align="top"></mj-class>
+
+  <mj-raw>
+    <!-- FONT HELVETICA -->
+  </mj-raw>
+
+  <mj-all font-family="Helvetica" color="#000"></mj-all>
+
+
+  <mj-accordion
+    border="0"
+    icon-position="right"
+    padding="15px 5px 25px 25px" />
+
+  <mj-accordion-title
+    padding="0"
+    font-size="12px"
+    font-family="Arial" />
+
+  <mj-accordion-element
+    border="1px solid #ededed"
+    icon-wrapped-url="https://brixtol.cloud/icons/arrow-right.svg"
+    icon-unwrapped-url="https://brixtol.cloud/icons/arrow-down.svg"
+    icon-width="20px"
+    icon-height="20px" />
+
+  <mj-accordion-text
+    padding="15px 0"
+    font-size="12px"
+    line-height="15px" />
+
+</mj-attributes>

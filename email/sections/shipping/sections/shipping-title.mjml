@@ -1,0 +1,7 @@
+<mj-section padding="25px 25px 0 25px">
+  <mj-column width="100%" padding="0" vertical-align="top">
+    <mj-text mj-class="ff-arial fs-md fw-600 pb-4" align="left">
+      ORDER <a href="{{ order.order_status_url }}" style="color: #111;">{{ order_name }}</a> SHIPPED
+    </mj-text>
+  </mj-column>
+</mj-section>

@@ -1,0 +1,183 @@
+@media (max-width: 480px) {
+  .desktop {
+    display: none !important;
+  }
+
+  .pl-sm-0 {
+    padding-left: 0 !important;
+  }
+
+  .bd-right-sm-0 {
+    border-right: initial;
+  }
+  .bd-left-sm-0 {
+    border-left: initial;
+  }
+
+  .pt-lg-4 {
+    padding-left: initial;
+  }
+  .pl-lg-4 {
+    padding-left: initial;
+  }
+}
+
+@media (min-width: 480px) {
+  .mobile {
+    display: none !important;
+  }
+
+  .pt-lg-4 {
+    padding-top: 25px;
+  }
+
+  .pl-lg-4 {
+    padding-left: 25px;
+  }
+
+  .bd-left {
+    border-left: 1px solid #ededed;
+  }
+}
+
+.pl-2 {
+  padding-left: 15px;
+}
+
+.pl-4 {
+  padding-left: 25px;
+}
+
+.fc-red {
+  color: #d62020;
+}
+
+.ff-arial {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bd-bottom {
+  border-bottom: 1px solid #ededed;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-justify {
+  text-align: justify;
+}
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.button {
+  display: block;
+  position: relative;
+}
+
+.title {
+  text-align: left;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  font-family: Arial;
+}
+
+/* -------------------------------------------- */
+/* TABLE LINE ITEMS                             */
+/* -------------------------------------------- */
+
+.table-line-items {
+  padding: 0;
+}
+
+.table-line-items tr {
+  border-bottom: 1px solid #ecedee;
+  padding-bottom: 7px;
+}
+
+.table-line-items tr td {
+  padding-top: 7px;
+}
+
+.table-line-items .title {
+  display: block;
+  font-size: 13px;
+  text-decoration: none;
+  color: #222;
+}
+
+.table-line-items .vendor {
+  display: block;
+  font-weight: 100;
+  color: #888;
+  font-size: 11px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.table-line-items .quantity {
+  display: inline;
+  font-size: 11px;
+  font-weight: 900;
+  line-height: 25px;
+}
+
+.table-line-items .variant {
+  display: inline;
+  font-weight: 400;
+  line-height: 25px;
+  font-size: 12px;
+}
+
+.table-line-items .price,
+.table-line-items {
+  display: block;
+  font-weight: 900;
+}
+
+.table-line-items .price > .discount {
+  color: #d62020;
+}
+
+.table-line-items .price > .discount > del {
+  padding-left: 5px;
+  font-weight: 400;
+  line-height: 15px;
+  color: #000000;
+  display: block;
+}
+
+/* -------------------------------------------- */
+/* TABLE TOTAL                                  */
+/* -------------------------------------------- */
+
+.table-total-desktop,
+.table-total-mobile {
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.4px;
+}
+
+.table-total-desktop,
+.table-total-mobile tr {
+  border-bottom: 1px solid #ecedee;
+}
+
+.table-total-desktop tr td {
+  text-align: right;
+}
+
+.table-total-mobile tr {
+  text-align: left;
+}
+
+.product-variant {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: none;
+}

@@ -1,0 +1,110 @@
+{%- comment -%}
+
+  AUTHORIZATION
+
+  An hash authorization is generated which is
+  used when fetching order data from slipper. This
+  token protects users from querying orders that
+  do not belong to them and maintain per-order control.
+
+  The hash is a combination or the following:
+
+  order id + created_at (%e%M%w%y%H)
+
+  Example: 40212105621017816 1234567890
+  Convert: 402121056210178161234567890
+
+  It is not cryptographic magic it can be broken
+  but anyone trying to exploit will need data context
+
+{%- endcomment -%}
+{%- assign auth = created_at | date: '%e%M%w%y%H' | prepend: id | md5 -%}
+
+{%- comment -%}
+
+  ORDER LINE_ITEM TYPE
+
+  Assignment informs upon each line_items type.
+  Line items can have the following types:
+
+  - order
+  - rewax
+  - reclaim
+
+  Depending on a value contained within the line_item
+  the type is reflective. This value is used to filter
+  out certain items when generating slips and/or additional
+  document that might be required upon order confirmation.
+
+{%- endcomment -%}
+{%- assign item_type = 'order' -%}
+
+{%- comment -%}
+
+  REWAX SERVICE
+
+  Assignment informs if the order is a rewaxing
+  service order. When true the order confirmation
+  will render a slip link for the customer to print.
+
+  The value is assigned only 1 time depending if
+  a rewax line_item type has been detected.
+
+{%- endcomment -%}
+{%- assign rewax = false -%}
+
+{%- comment -%}
+
+  RECLAIM SERVICE - NOT YET AVAILABLE
+
+  Assignment informs if the order is a reclaim wherein
+  the customer will send a used garment for reclaim
+  and receive a discount. When true the order confirmation
+  will render a slip link for the customer to print.
+
+  The value is assigned only 1 time depending if
+  a rewax line_item type has been detected.
+
+{%- endcomment -%}
+{%- assign reclaim = false -%}
+
+{%- capture order_items -%}
+[
+  {%- for line in order.line_items -%}
+
+  {% if line.product.vendor contains 'Rewaxing' %}
+    {%- assign item_type = 'rewax' -%}
+    {%- if rewax == false -%}{%- assign rewax = true -%}{%- endif -%}
+  {%- else -%}
+    {%- assign item_type = 'order' -%}
+  {%- endif -%}
+
+  {
+    "title": "{{ line.title }}",
+    "size": "{{ line.variant.title }}",
+    "quantity": {{ line.quantity }},
+    "item_type": "{{ item_type }}"
+  }
+  {%- unless forloop.last -%},{%- endunless -%}
+  {%- endfor -%}
+]
+{%- endcapture -%}
+
+{%- capture order_slip -%}
+  auth={{ auth }}
+  &id={{ order.id }}
+  &number={{ order.order_name | remove: '#' }}
+  &first_name={{ customer.first_name }}
+  &last_name={{ customer.last_name }}
+  &email={{ order.email }}
+  &phone={{ order.shipping_address.phone }}
+  &street_address={{ order.shipping_address.street }}
+  &city={{ order.shipping_address.city }}
+  &zip={{ order.shipping_address.zip }}
+  &country={{ order.shipping_address.country }}
+  &country_code={{ order.shipping_address.country_code }}
+  &line_items={{ order.order_items | strip | url_param_escape }}
+{%- endcapture -%}
+
+
+

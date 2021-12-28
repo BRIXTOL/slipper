@@ -1,0 +1,125 @@
+<mj-wrapper padding="0">
+
+  <!-- PURCHASE SUMMARY DESKTOP -->
+  <mj-section
+    background-color="#ffffff"
+    full-width="full-width"
+    css-class="desktop"
+    padding="5px 15px 5px 15px">
+
+    <mj-column>
+      <mj-table
+        table-layout="fixed"
+        padding="0"
+        line-height="30px"
+        css-class="table-total-desktop">
+
+        <tr class="bd-bottom">
+          <td colspan="4">
+            SUBTOTAL:
+          </td>
+          <td colspan="2">
+            {{ subtotal_price | money }}
+          </td>
+        </tr>
+
+        <tr class="bd-bottom">
+          <td colspan="4">
+            SHIPPING COST:
+          </td>
+          <td colspan="2">
+            {{ shipping_price | money  }}
+          </td>
+        </tr>
+
+        <mj-raw>
+          {% if discounts_savings > 0 %}
+        </mj-raw>
+
+        <tr class="bd-bottom">
+          <td colspan="4">
+            DISCOUNT:
+          </td>
+          <td colspan="2" class="fc-red">
+            {{ discounts_savings | money  }}
+          </td>
+        </tr>
+
+        <mj-raw>
+          {% endif %}
+        </mj-raw>
+
+        <tr>
+          <td colspan="4">
+            TOTAL:
+          </td>
+          <td colspan="2">
+            {{ total_price | money }}
+          </td>
+        </tr>
+
+      </mj-table>
+    </mj-column>
+  </mj-section>
+
+  <!-- PURCHASE SUMMARY MOBILE -->
+  <mj-section
+    background-color="#ffffff"
+    full-width="full-width"
+    css-class="mobile"
+    padding="0 15px">
+
+    <mj-column>
+      <mj-table
+        padding="0"
+        line-height="30px"
+        css-class="table-total-mobile">
+
+        <tr>
+          <td width="100px">
+            SUBTOTAL:
+          </td>
+          <td>
+            {{ subtotal_price | money }}
+          </td>
+        </tr>
+
+        <tr>
+          <td width="100px">
+            SHIPPING:
+          </td>
+          <td>
+            {{ shipping_price | money  }}
+          </td>
+        </tr>
+
+        <mj-raw>
+          {% if discounts_savings > 0 %}
+        </mj-raw>
+
+        <tr>
+          <td width="100px">
+            DISCOUNT:
+          </td>
+          <td class="fc-red">
+            {{ discounts_savings | money  }}
+          </td>
+        </tr>
+
+        <mj-raw>
+          {% endif %}
+        </mj-raw>
+
+        <tr>
+          <td width="100px">
+            TOTAL:
+          </td>
+          <td>
+            {{ total_price | money }}
+          </td>
+        </tr>
+      </mj-table>
+
+    </mj-column>
+  </mj-section>
+</mj-wrapper>

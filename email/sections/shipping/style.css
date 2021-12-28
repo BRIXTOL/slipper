@@ -1,0 +1,160 @@
+@media (max-width: 480px) {
+  .desktop {
+    display: none !important;
+  }
+
+  .indent {
+    padding-left: 0px;
+  }
+}
+
+@media (min-width: 480px) {
+  .mobile {
+    display: none !important;
+  }
+
+  .indent {
+    padding-left: 25px;
+  }
+
+  .bd-left {
+    border-left: 1px solid #ededed;
+  }
+}
+
+.fc-black {
+  color: #111;
+}
+
+.accordion-text {
+  line-height: 18px;
+  font-size: 11px;
+  font-family: Arial;
+}
+
+.accordion-text h5,
+.accordion-text h6 {
+  font-weight: 600;
+  font-family: Arial;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.accordion-text h5 {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 7px;
+}
+
+.accordion-text h6 {
+  font-size: 12px;
+  color: #111;
+  margin-bottom: 5px;
+}
+
+.accordion-text span {
+}
+
+.accordion-text p {
+  line-height: 16px;
+}
+
+.pl-2 {
+  padding-left: 15px;
+}
+
+.pl-4 {
+  padding-left: 25px;
+}
+
+.fc-red {
+  color: #d62020;
+}
+
+.ff-arial {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bd-bottom {
+  border-bottom: 1px solid #ededed;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-justify {
+  text-align: justify;
+}
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.button {
+  display: block;
+  position: relative;
+}
+
+.title {
+  text-align: left;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  font-family: Arial;
+}
+
+.d-block {
+  display: block;
+}
+
+/* -------------------------------------------- */
+/* TABLE LINE ITEMS                             */
+/* -------------------------------------------- */
+.table-shipping-items {
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-shipping-items tr {
+  border-bottom: 1px solid #ededed;
+}
+
+.table-shipping-items tr:last-child {
+  border: 0;
+}
+.table-shipping-items tr td {
+  vertical-align: middle;
+  padding-bottom: 5px;
+  padding-top: 10px;
+}
+
+.table-shipping-items .title {
+  display: block;
+  font-size: 13px;
+  text-decoration: none;
+  color: #222;
+}
+
+.table-shipping-items .size {
+  display: block;
+  font-weight: 100;
+  color: #888;
+  font-size: 11px;
+  padding-top: 5px;
+}
+
+.table-shipping-items .quantity {
+  vertical-align: middle;
+  text-align: right;
+  font-size: 18px;
+  padding-right: 15px;
+}
+
+.table-shipping-items .quantity > .x {
+  font-size: 14px;
+}

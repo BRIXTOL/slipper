@@ -1,0 +1,15 @@
+<mj-section padding="25px 25px 0 25px">
+  <mj-column vertical-align="top" mj-class="bd-bottom">
+    <mj-text mj-class="ff-arial fs-sm fw-600 pb-1 bd-bottom">
+      RETURNS AND EXCHANGES
+    </mj-text>
+  </mj-column>
+</mj-section>
+<mj-section padding="15px 25px 0 25px">
+  <mj-column padding="0" vertical-align="top">
+    <mj-text mj-class="ff-arial fs-xs fw-400 lh-sm">
+      If you are unhappy with your order or wish to exchange for another size or variant you have 14 days to return it to us. We have included a return slip, instructions and return shipping labels in your package. Please refer to <a style="color:#444;" href="https://brixtoltextiles.com/returns-and-exchanges">return policy</a> for more infromation.
+    </mj-text>
+
+  </mj-column>
+</mj-section>

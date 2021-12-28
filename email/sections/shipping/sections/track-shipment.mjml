@@ -1,0 +1,44 @@
+<mj-section
+  background-color="#ffffff"
+  full-width="full-width"
+  padding-left="25px"
+  padding-right="25px"
+  padding-bottom="0">
+
+  <mj-column vertical-align="middle">
+
+    <mj-raw>
+      {% if fulfillment.tracking_numbers.size == 1 and fulfillment.tracking_url %}
+    </mj-raw>
+
+    <mj-button
+      align="center"
+      mj-class="ff-arial fs-xs fw-500 lh-xxs"
+      css-class="ls-md button"
+      background-color="#ffffff"
+      align="left"
+      border="1px solid #111111"
+      border-radius="3px"
+      href="{{ fulfillment.tracking_url }}">
+      TRACK YOUR SHIPMENT
+    </mj-button>
+
+
+    <mj-raw>{% else %}</mj-raw>
+
+    <mj-button
+      align="center"
+      mj-class="ff-arial fs-xs fw-500 lh-xxs"
+      css-class="ls-md button"
+      background-color="#ffffff"
+      align="left"
+      border="1px solid #111111"
+      border-radius="3px"
+      href="{{ order_status_url }}">
+      VIEW ORDER STATUS
+    </mj-button>
+
+    <mj-raw>{% endif %}</mj-raw>
+
+  </mj-column>
+</mj-section>

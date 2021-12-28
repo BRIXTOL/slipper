@@ -1,0 +1,39 @@
+<mjml>
+  <mj-head>
+
+    <!-- SHARED ATTRIBUTES -->
+    <mj-include path="./../../shared/attributes.mjml" />
+
+    <!-- CUSTOM CSS -->
+    <mj-include path="./order.css" type="css" inline="inline" />
+
+  </mj-head>
+
+  <mj-body background-color="#ffffff">
+
+    <!-- HEADER -->
+    <mj-include path="./../../shared/header.mjml" />
+
+    <!-- ORDER SPECIFIC -->
+    <mj-include path="./sections/text-content.mjml" />
+
+    <!-- REWAXING SLIP -->
+    <mj-include path="./sections/rewaxing-slip.mjml" />
+
+    <!-- LINE ITEMS-->
+    <mj-include path="./sections/line-items.mjml" />
+
+    <!-- PAYMENT -->
+    <mj-include path="./sections/payment.mjml" />
+
+    <!-- SHIPPING / BILLING -->
+    <mj-include path="./sections/shipping-billing.mjml" />
+
+    <!-- FOOTER SOCIALS -->
+    <mj-include path="./../../shared/social.mjml" />
+
+    <!-- FOOTER AUTOMATED -->
+    <mj-include path="./../../shared/footer-automated.mjml" />
+
+  </mj-body>
+</mjml>
